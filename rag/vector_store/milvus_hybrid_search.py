@@ -82,7 +82,7 @@ class MilvusHybridSearch:
             index_params=index_params
         )
 
-    def indexing(self, documents: List[Document], batch_size: int = 100):
+    def indexing(self, documents: List[Document], batch_size: int = 500):
         """
         Index documents in batches to improve performance and memory management.
 
