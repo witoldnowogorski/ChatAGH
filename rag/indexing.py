@@ -11,7 +11,7 @@ ENV_PATH = ".env"
 DATA_PATH = ""
 
 
-def indexing(data_path, collection_name, chunk_size=1000, chunk_overlap=100, max_chunks=None):
+def indexing(data_path, collection_name, chunk_size=1000, chunk_overlap=100, max_vectors=None):
     """
     Index documents from a single data path into a specific vector store collection
 
@@ -30,8 +30,8 @@ def indexing(data_path, collection_name, chunk_size=1000, chunk_overlap=100, max
     chunker = LangChainChunker(chunk_size, chunk_overlap, remove_duplicates=True)
     chunks = chunker.chunk(data)
 
-    if max_chunks:
-        chunks = chunks[:max_chunks]
+    if max_vectors:
+        chunks = chunks[:max_vectors]
 
     print(f"Generated {len(chunks)} chunks from {data_path}")
 
