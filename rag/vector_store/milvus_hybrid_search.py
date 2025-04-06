@@ -1,3 +1,4 @@
+import os
 from typing import List
 
 from langchain_core.documents import Document
@@ -15,10 +16,16 @@ from pymilvus import (
 
 
 class MilvusHybridSearch:
-    def __init__(self, collection_name: str, uri: str = "http://localhost:19530"):
-        connections.connect("default", uri=uri)
+    def __init__(self, collection_name: str):
+        uri = os.environ["MILVUS_URI"]
+        token = os.environ["MILVUS_TOKEN"]
+        connections.connect(
+            alias="default",
+            uri=uri,
+            token=token
+        )
         self.collection_name = collection_name
-        self.client = MilvusClient(uri=uri)
+        self.client = MilvusClient(uri=uri, token=token)
         self.dense_embedding_model = SentenceTransformer("intfloat/multilingual-e5-large")
 
         if not utility.has_collection(self.collection_name):

@@ -1,5 +1,7 @@
 import os
 import ast
+import json
+from typing import Dict, List, Any, Optional
 
 from google import genai
 
@@ -7,7 +9,8 @@ from rag.utils.logger import logger
 from rag.models.prompts import (
     QUERY_AUGMENTATION_PROMPT_TEMPLATE,
     ENHANCE_SEARCH_PROMPT_TEMPLATE,
-    ANSWER_GENERATION_PROMPT_TEMPLATE
+    ANSWER_GENERATION_PROMPT_TEMPLATE,
+    GRAPH_EXTRACTION_PROMPT
 )
 
 
@@ -111,3 +114,56 @@ class AnswerGenerationModel(BaseGoogleModel):
 
     def __init__(self):
         super().__init__(prompt_template=ANSWER_GENERATION_PROMPT_TEMPLATE)
+
+
+class GraphExtractorModel(BaseGoogleModel):
+    """
+    A specialized model for extracting entities and relationships from text documents
+    related to AGH University of Science and Technology and university life.
+
+    This class extends BaseGoogleModel to process text input and extract structured information
+    about entities of specified types and the relationships between them.
+
+    Attributes:
+        All attributes inherited from BaseGoogleModel
+
+    Methods:
+        generate(input_text: str, entity_types: List[str], **kwargs):
+            Processes the input text to extract entities and relationships, returning
+            a structured Python dictionary.
+    """
+
+    def __init__(self):
+        super().__init__(prompt_template=GRAPH_EXTRACTION_PROMPT)
+
+    def generate(self, input_text: str, **kwargs) -> Dict[
+        str, List[Dict[str, Any]]]:
+        """
+        Process the input text to extract entities and their relationships.
+
+        Args:
+            input_text (str): The text to extract entities and relationships from
+            entity_types (List[str], optional): List of entity types to focus on
+            **kwargs: Additional arguments to pass to the parent generate method
+
+        Returns:
+            Dict[str, List[Dict[str, Any]]]: A dictionary with 'entities' and 'relationships' keys,
+            each containing a list of dictionaries representing entities and relationships
+        """
+        prompt = self.prompt_template.replace("{{CONTEXT}}", input_text)
+        contents = [prompt]
+        response = self._inference(contents)
+
+        json_str = response
+        if "END_OF_EXTRACTION" in json_str:
+            json_str = json_str.split("END_OF_EXTRACTION")[0].strip()
+
+        json_str = json_str.replace("```json", "").replace("```python", "").replace("```", "").strip()
+        result = json.loads(json_str)
+
+        if "entities" not in result or "relationships" not in result:
+            logger.warning(f"[GraphExtractorModel] Response missing expected keys: {result}")
+            result = {"entities": [], "relationships": []}
+
+        return result
+
