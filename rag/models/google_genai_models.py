@@ -1,17 +1,25 @@
 import os
 import ast
 import json
+import random
 from typing import Dict, List, Any, Optional
 
 from google import genai
 
 from rag.utils.logger import logger
+from rag.utils.utils import retry_on_exception
 from rag.models.prompts import (
     QUERY_AUGMENTATION_PROMPT_TEMPLATE,
     ENHANCE_SEARCH_PROMPT_TEMPLATE,
     ANSWER_GENERATION_PROMPT_TEMPLATE,
     GRAPH_EXTRACTION_PROMPT
 )
+
+
+
+API_KEYS = [
+
+]
 
 
 class BaseGoogleModel:
@@ -35,11 +43,14 @@ class BaseGoogleModel:
     """
 
     def __init__(self, prompt_template, model_name="gemini-2.0-flash-001"):
-        self.client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+        self.api_keys = API_KEYS
         self.model = model_name
         self.prompt_template = prompt_template
 
+    @retry_on_exception(attempts=3, delay=2, backoff=5)
     def _inference(self, contents):
+        self.client = genai.Client(api_key=random.choice(self.api_keys))
+
         logger.debug(f"[{self.__class__.__name__}] Inferring model with content:'{contents}'")
         return self.client.models.generate_content(
             model=self.model,
@@ -136,6 +147,7 @@ class GraphExtractorModel(BaseGoogleModel):
     def __init__(self):
         super().__init__(prompt_template=GRAPH_EXTRACTION_PROMPT)
 
+    @retry_on_exception(attempts=3, delay=1, backoff=1)
     def generate(self, input_text: str, **kwargs) -> Dict[
         str, List[Dict[str, Any]]]:
         """
@@ -158,12 +170,14 @@ class GraphExtractorModel(BaseGoogleModel):
         if "END_OF_EXTRACTION" in json_str:
             json_str = json_str.split("END_OF_EXTRACTION")[0].strip()
 
-        json_str = json_str.replace("```json", "").replace("```python", "").replace("```", "").strip()
+        json_str = (
+            json_str.replace("```json", "").
+            replace("```python", "").
+            replace("```", "").strip()
+        )
         result = json.loads(json_str)
 
-        if "entities" not in result or "relationships" not in result:
-            logger.warning(f"[GraphExtractorModel] Response missing expected keys: {result}")
-            result = {"entities": [], "relationships": []}
+        assert "entities" in result and "relationships" in result
 
         return result
 
