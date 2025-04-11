@@ -39,7 +39,7 @@ def indexing(data_path, collection_name, chunk_size=1000, chunk_overlap=100, max
     vector_store.indexing(chunks[25500:])
 
     print(f"Indexed to collection: {collection_name}")
-    return (collection_name, len(chunks))
+    return [(collection_name, len(chunks))]
 
 
 if __name__ == "__main__":
