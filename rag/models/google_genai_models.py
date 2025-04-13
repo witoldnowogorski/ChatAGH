@@ -3,6 +3,7 @@ import ast
 import json
 import random
 from typing import Dict, List, Any, Optional
+from dotenv import load_dotenv
 
 from google import genai
 
@@ -15,12 +16,9 @@ from rag.models.prompts import (
     GRAPH_EXTRACTION_PROMPT
 )
 
+ENV_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), ".env")
 
-
-API_KEYS = [
-
-]
-
+load_dotenv(dotenv_path=ENV_PATH)
 
 class BaseGoogleModel:
     """
@@ -43,7 +41,11 @@ class BaseGoogleModel:
     """
 
     def __init__(self, prompt_template, model_name="gemini-2.0-flash-001"):
-        self.api_keys = API_KEYS
+        api_keys_str = os.getenv("API_KEYS", "[]")
+        self.api_keys = ast.literal_eval(api_keys_str)
+        if not self.api_keys:
+            raise ValueError("API_KEYS environment variable is not set or empty")
+        
         self.model = model_name
         self.prompt_template = prompt_template
 
