@@ -13,6 +13,7 @@ from pymilvus import (
     FunctionType,
     connections
 )
+import torch
 
 
 class MilvusHybridSearch:
@@ -26,7 +27,10 @@ class MilvusHybridSearch:
         )
         self.collection_name = collection_name
         self.client = MilvusClient(uri=uri, token=token)
-        self.dense_embedding_model = SentenceTransformer("intfloat/multilingual-e5-large")
+        if torch.cuda.is_available():
+            self.dense_embedding_model = SentenceTransformer("intfloat/multilingual-e5-large", device="cuda")
+        else:
+            self.dense_embedding_model = SentenceTransformer("intfloat/multilingual-e5-large")
 
         if not utility.has_collection(self.collection_name):
             self._create_collection()
