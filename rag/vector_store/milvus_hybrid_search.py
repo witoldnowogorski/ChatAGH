@@ -1,3 +1,4 @@
+import os
 from typing import List
 
 from langchain_core.documents import Document
@@ -12,14 +13,24 @@ from pymilvus import (
     FunctionType,
     connections
 )
+import torch
 
 
 class MilvusHybridSearch:
-    def __init__(self, collection_name: str, uri: str = "http://localhost:19530"):
-        connections.connect("default", uri=uri)
+    def __init__(self, collection_name: str):
+        uri = os.environ["MILVUS_URI"]
+        token = os.environ["MILVUS_TOKEN"]
+        connections.connect(
+            alias="default",
+            uri=uri,
+            token=token
+        )
         self.collection_name = collection_name
-        self.client = MilvusClient(uri=uri)
-        self.dense_embedding_model = SentenceTransformer("intfloat/multilingual-e5-large")
+        self.client = MilvusClient(uri=uri, token=token)
+        if torch.cuda.is_available():
+            self.dense_embedding_model = SentenceTransformer("intfloat/multilingual-e5-large", device="cuda")
+        else:
+            self.dense_embedding_model = SentenceTransformer("intfloat/multilingual-e5-large")
 
         if not utility.has_collection(self.collection_name):
             self._create_collection()
@@ -82,7 +93,7 @@ class MilvusHybridSearch:
             index_params=index_params
         )
 
-    def indexing(self, documents: List[Document], batch_size: int = 100):
+    def indexing(self, documents: List[Document], batch_size: int = 500):
         """
         Index documents in batches to improve performance and memory management.
 
