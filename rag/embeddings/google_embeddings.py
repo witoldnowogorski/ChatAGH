@@ -12,7 +12,7 @@ class GoogleEmbeddings(BaseEmbeddings):
     A class that provides embeddings using Google's Generative AI for documents and queries.
 
     This class leverages the GoogleGenerativeAIEmbeddings to compute vector representations
-    for text data. It supports generating embeddings for both documents and individual queries,
+    for text documents. It supports generating embeddings for both documents and individual queries,
     with a retry mechanism in place for the query embedding function.
 
     Attributes:
