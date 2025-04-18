@@ -60,6 +60,12 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
+### Install local modules
+```
+pip install -e .
+```
+
+
 ### Credentials
 Add `.env` file with your credentials in root directory, you can find required credentials in `.env.template`
 
