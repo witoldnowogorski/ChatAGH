@@ -3,6 +3,7 @@ from typing import List
 
 from langchain_core.documents import Document
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
+
 from rag.embeddings.base_embeddings import BaseEmbeddings
 from rag.utils.utils import retry_on_exception
 
@@ -40,5 +41,3 @@ class GoogleEmbeddings(BaseEmbeddings):
     @retry_on_exception(attempts=3)
     def embed_query(self, text: str) -> List[float]:
         return self.embeddings.embed_query(text)
-
-
