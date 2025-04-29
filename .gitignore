@@ -1,0 +1,7 @@
+.idea/
+.env
+logs/
+**/__pycache__/
+milvus/volumes/
+launch.json
+*.egg-info/
