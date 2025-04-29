@@ -8,7 +8,7 @@ from llama_index.core.node_parser import SemanticSplitterNodeParser
 from llama_index.core.schema import Document
 from llama_index.embeddings.google_genai import GoogleGenAIEmbedding
 
-from rag.utils.utils import load_json_data
+from rag.utils.utils import load_json_data, save_json_data
 from rag.vector_store.milvus_hybrid_search import MilvusHybridSearch
 
 ENV_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env")
@@ -60,7 +60,30 @@ def indexing(
         for idx, doc in enumerate(data)
     ]
 
-    nodes = splitter.get_nodes_from_documents(documents)
+    file_path_count = os.path.join(
+        os.path.dirname(os.path.dirname(__file__)),
+        "semantic_nodes/processed_count.txt",
+    )
+    file_path_nodes = os.path.join(
+        os.path.dirname(os.path.dirname(__file__)), "semantic_nodes/"
+    )
+    if os.path.exists(file_path_count):
+        with open(file_path_count, "r") as f:
+            processed_count = int(f.read().strip())
+    else:
+        open(file_path_count, "a").close()
+        processed_count = 0
+
+    nodes = []
+    for i, document in enumerate(documents[processed_count:]):
+        with open(file_path_count, "a") as f:
+            f.write(str(processed_count) + "\n")
+        nodes.append(splitter.get_nodes_from_documents([document]))
+        save_json_data(
+            nodes[i], os.path.join(file_path_nodes, f"nodes_{i}.json")
+        )
+
+        processed_count += 1
 
     if max_vectors:
         nodes = nodes[:max_vectors]
