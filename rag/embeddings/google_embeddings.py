@@ -3,6 +3,7 @@ from typing import List
 
 from langchain_core.documents import Document
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
+
 from rag.embeddings.base_embeddings import BaseEmbeddings
 from rag.utils.utils import retry_on_exception
 
@@ -12,7 +13,7 @@ class GoogleEmbeddings(BaseEmbeddings):
     A class that provides embeddings using Google's Generative AI for documents and queries.
 
     This class leverages the GoogleGenerativeAIEmbeddings to compute vector representations
-    for text data. It supports generating embeddings for both documents and individual queries,
+    for text documents. It supports generating embeddings for both documents and individual queries,
     with a retry mechanism in place for the query embedding function.
 
     Attributes:
@@ -40,5 +41,3 @@ class GoogleEmbeddings(BaseEmbeddings):
     @retry_on_exception(attempts=3)
     def embed_query(self, text: str) -> List[float]:
         return self.embeddings.embed_query(text)
-
-
