@@ -1,8 +1,8 @@
 from typing import List, TypedDict
 
+from langchain_core.messages import BaseMessage
 
-class GraphState(TypedDict):
-    question: str,
-    generation: str,
-    web_search: bool,
-    Dosuments
+
+class ChatState(TypedDict):
+    messages: List[BaseMessage]
+    use_rag: bool

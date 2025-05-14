@@ -3,30 +3,31 @@ from typing import List, TypedDict
 from langchain_core.messages import HumanMessage, AIMessage
 from langgraph.graph.state import StateGraph, END, START
 
-from models.google_genai.chat_model import ChatModel
-
-class ChatState(TypedDict):
-    messages: List[dict]
+from chat_graph.nodes import RAGDecisionNode, AnswerGenerationNode
+from chat_graph.state import ChatState
 
 
 class ChatGraph:
     def __init__(self):
-        self.model = ChatModel()
 
         self.workflow = StateGraph(ChatState)
-        self.workflow.add_edge(START, "answer_generation")
-        self.workflow.add_node("answer_generation", self._generate_answer)
 
         self.history = []
-        self.graph = self.workflow.compile()
 
-    def _generate_answer(self, state):
-        response = self.model.generate(chat_history=state["messages"])
-        answer = AIMessage(response)
-        self.history.append(answer)
-        return {
-            "messages": state["messages"]
-        }
+        self.workflow.add_node("rag_decision", RAGDecisionNode())
+        self.workflow.add_node("answer_generation", AnswerGenerationNode())
+        self.workflow.add_node("rag_generation", lambda state: {"messages": [], "use_rag": False})
+
+        self.workflow.add_edge(START, "rag_decision")
+        self.workflow.add_conditional_edges(
+            "rag_decision",
+            lambda state: "rag_generation" if state["use_rag"] else "answer_generation"
+        )
+
+        self.workflow.add_edge("answer_generation", END)
+        self.workflow.add_edge("rag_generation", END)
+
+        self.graph = self.workflow.compile()
 
     def invoke(self, message):
         self.history.append(HumanMessage(message))
@@ -34,7 +35,8 @@ class ChatGraph:
             "messages": self.history
         })
 
-chat = ChatGraph()
-print(chat.invoke("HI"))
-print(chat.invoke("Who is 2 + 2?"))
-print(chat.invoke("What was my previous question?"))
+if __name__ == "__main__":
+    chat = ChatGraph()
+    print(chat.invoke("Kto jest rektorek AGH?"))
+    # print(chat.invoke("Who is 2 + 2?"))
+    # print(chat.invoke("What was my previous question?"))
