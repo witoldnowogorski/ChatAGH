@@ -1,12 +1,12 @@
 python-dotenv==1.0.1
-langchain-core==0.3.45
+langchain-core~=0.3.59
 pypdf==5.3.1
 google-genai==1.5.0
 qdrant-client==1.13.3
 fastembed==0.6.0
 sentence-transformers==3.4.1
 python-docx==1.1.2
-langchain==0.3.20
+langchain~=0.3.25
 streamlit==1.43.2
 langchain_google_genai==2.1.0
 pandas==2.0.3
@@ -19,7 +19,7 @@ llama-index-embeddings-openai
 dotenv~=0.9.9
 protobuf~=5.29.4
 langchain-text-splitters~=0.3.7
-langchain-google-genai~=2.1.0
+langchain-google-genai~=2.0.10
 llama-index-core~=0.12.31
 torch~=2.6.0
 numpy~=1.26.4
@@ -28,3 +28,7 @@ networkx~=3.4.2
 requests~=2.32.3
 tqdm~=4.67.1
 llama-index-embeddings-google-genai
+
+pydantic~=2.11.4
+langgraph~=0.4.3
+beautifulsoup4~=4.13.4
