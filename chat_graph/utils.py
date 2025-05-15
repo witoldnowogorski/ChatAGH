@@ -1,5 +1,5 @@
-import time
 import functools
+import time
 
 
 def retry_on_exception(attempts=3, delay=1, backoff=10, exception=Exception):

@@ -1,3 +1,4 @@
+import markdown
 import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage
 from chat_graph.graph import ChatGraph
@@ -166,6 +167,7 @@ with col1:
                         <div class='clear'></div>
                     """, unsafe_allow_html=True)
                 elif isinstance(message, AIMessage):
+                    content = markdown.markdown(message.content)
                     st.markdown(f"""
                         <div class='message-row'>
                             <div style='margin-right: 10px;'>
@@ -175,7 +177,7 @@ with col1:
                             </div>
                             <div class='chat-container ai-message'>
                                 <div class='username'>Assistant</div>
-                                <div class='message-content'>{message.content}</div>
+                                <div class='message-content'>{content}</div>
                             </div>
                         </div>
                         <div class='clear'></div>

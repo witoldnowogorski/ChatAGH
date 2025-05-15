@@ -50,7 +50,9 @@ class RAGDecisionAgent(BaseAgent):
         self.chain: Runnable = self.prompt | self.llm | self.output_parser
 
     def inference(self, chat_history: List[BaseMessage]) -> bool:
-        result = self.chain.invoke({"chat_history": get_buffer_string(chat_history)})
+        result = self.chain.invoke({
+            "chat_history": get_buffer_string(chat_history)
+        })
         return result.use_rag
 
 

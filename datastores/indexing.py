@@ -1,10 +1,10 @@
 import os
 
 from dotenv import load_dotenv
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from rag.utils.utils import load_json_data
 from rag.vector_store.milvus_hybrid_search import MilvusHybridSearch
-from rag.chunkers.langchain_chunker import LangChainChunker
 
 ENV_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env")
 DATA_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/")
@@ -24,10 +24,10 @@ def indexing(data_path, collection_name, chunk_size=1000, chunk_overlap=100, max
         tuple: (collection_name, number of chunks)
     """
     load_dotenv(dotenv_path=ENV_PATH)
-    data = load_json_data(data_path)
+    documents = load_json_data(data_path)
 
-    chunker = LangChainChunker(chunk_size, chunk_overlap, remove_duplicates=True)
-    chunks = chunker.chunk(data)
+    splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
+    chunks = splitter.split_documents(documents)
 
     if max_vectors:
         chunks = chunks[:max_vectors]
