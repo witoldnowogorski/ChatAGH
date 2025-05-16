@@ -35,9 +35,8 @@ if __name__ == "__main__":
     print(agent(ChatState(
         summaries=[""],
         questions=["Kto jest rektorem AGH?"],
-        web_search=[True],
+        web_search_flags=[True],
         retrieved_docs=[],
         use_rag=True,
         messages=[],
     )))
-

@@ -21,5 +21,3 @@ class QuestionsGenerationNode(BaseNode):
             summaries=state['summaries'],
             web_search_flags=state['web_search_flags'],
         )
-
-
