@@ -23,7 +23,7 @@ class ChatGraph:
         self.history = []
 
         self.workflow.add_node("rag_decision", RAGDecisionNode())
-        self.workflow.add_node("answer_generation", AnswerGenerationNode(self.history))
+        self.workflow.add_node("answer_generation", AnswerGenerationNode())
         self.workflow.add_node("questions_generation", QuestionsGenerationNode())
         self.workflow.add_node("retriever", RetrieverNode())
         self.workflow.add_node("docs_analyzer", DocsAnalyzerNode())
@@ -51,15 +51,17 @@ class ChatGraph:
         self.graph = self.workflow.compile()
 
     def invoke(self, message):
-        self.history.append(HumanMessage(message))
-        return self.graph.invoke({
-            "messages": self.history,
+        result = self.graph.invoke({
+            "messages": self.history + [HumanMessage(message)],
             "questions": [],
             "use_rag": False,
             "retrieved_docs": [],
             "summaries": [],
             "web_search_flags": [],
         })
+        self.history = result["messages"]
+
+        return result
 
 
 if __name__ == "__main__":
@@ -72,6 +74,5 @@ if __name__ == "__main__":
     temp_state = chat.invoke("Hej")
     final_state = chat.invoke("Jak zostac studentem AGH?")
 
-    raise NotImplementedError()
     # print(chat.invoke("Who is 2 + 2?"))
     # print(chat.invoke("What was my previous question?"))
