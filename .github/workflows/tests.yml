@@ -30,5 +30,7 @@ jobs:
     - name: Run test
       env:
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        MILVUS_TOKEN: ${{ secrets.MILVUS_TOKEN }}
+        MILVUS_URI: ${{ secrets.MILVUS_URI }}
       run: |
         pytest --cov=./ --cov-report=xml
