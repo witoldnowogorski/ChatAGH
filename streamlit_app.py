@@ -1,7 +1,16 @@
+import os
+
 import markdown
 import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage
+from dotenv import load_dotenv
+
 from chat_graph.graph import ChatGraph
+
+root_path = os.path.dirname(os.path.abspath(__file__))
+dotenv_path = os.path.join(root_path, '.env')
+
+load_dotenv(dotenv_path=dotenv_path)
 
 # --- Page Config ---
 st.set_page_config(

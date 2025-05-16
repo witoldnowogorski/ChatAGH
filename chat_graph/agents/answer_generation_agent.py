@@ -51,11 +51,6 @@ class AnswerGenerationAgent(BaseAgent):
         documents = "\n\n".join(documents or []) if documents else "No documents provided"
         chat_history = get_buffer_string(chat_history)
 
-        print(self.prompt.invoke({
-            "chat_history": chat_history,
-            "documents": documents
-        }).text)
-
         response = self.chain.invoke({
             "chat_history": chat_history,
             "documents": documents

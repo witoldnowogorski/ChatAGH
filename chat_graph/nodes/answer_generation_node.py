@@ -5,20 +5,16 @@ from chat_graph.state import ChatState
 
 
 class AnswerGenerationNode(BaseNode):
-    def __init__(self, chat_history):
+    def __init__(self):
         self.agent = AnswerGenerationAgent()
-        self.chat_history = chat_history
 
     def __call__(self, state: ChatState) -> ChatState:
-        chat_history = state['messages']
-
         summaries = state['summaries']
 
         answer = self.agent.inference(
-            chat_history=chat_history,
+            chat_history=state["messages"],
             documents=summaries,
         )
-        chat_history.append(answer)
 
         return ChatState(
             messages=state['messages'] + [answer],
