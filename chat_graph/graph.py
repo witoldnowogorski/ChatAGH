@@ -1,3 +1,5 @@
+import os
+
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage
 from langgraph.graph.state import StateGraph, END, START
@@ -50,7 +52,6 @@ class ChatGraph:
 
     def invoke(self, message):
         self.history.append(HumanMessage(message))
-        print(self.history)
         return self.graph.invoke({
             "messages": self.history,
             "questions": [],
@@ -62,7 +63,10 @@ class ChatGraph:
 
 
 if __name__ == "__main__":
-    load_dotenv()
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(os.path.dirname(current_dir))
+    dotenv_path = os.path.join(project_root, '.env')
+    load_dotenv(dotenv_path=dotenv_path)
 
     chat = ChatGraph()
     temp_state = chat.invoke("Hej")
