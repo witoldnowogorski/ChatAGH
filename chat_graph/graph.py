@@ -71,8 +71,8 @@ if __name__ == "__main__":
     load_dotenv(dotenv_path=dotenv_path)
 
     chat = ChatGraph()
-    temp_state = chat.invoke("Hej")
-    final_state = chat.invoke("Jak zostac studentem AGH?")
+    # temp_state = chat.invoke("Hej")
+    # final_state = chat.invoke("Jak zostac studentem AGH?")
 
     # print(chat.invoke("Who is 2 + 2?"))
     # print(chat.invoke("What was my previous question?"))
