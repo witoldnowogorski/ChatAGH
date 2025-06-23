@@ -30,7 +30,6 @@ class ChatGraph:
         self.workflow.add_node("web_search", WebSearchNode())
         self.workflow.add_node("retrieval_summary", lambda x: x)
 
-
         self.workflow.add_edge(START, "rag_decision")
         self.workflow.add_conditional_edges(
             "rag_decision",

@@ -58,3 +58,8 @@ def extract_links(url):
     df = df.drop_duplicates(subset=['url'])
 
     return df
+
+if __name__ == "__main__":
+    links = extract_links("https://sylabusy.agh.edu.pl/pl/1/2/21/1/4/3/8")
+    for link in links["url"]:
+        print(link)
