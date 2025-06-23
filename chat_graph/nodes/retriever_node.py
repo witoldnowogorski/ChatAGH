@@ -6,7 +6,7 @@ MILVUS_COLLECTION_NAME = "chatagh"
 
 
 class RetrieverNode(BaseNode):
-    def __init__(self, num_chunks=10):
+    def __init__(self, num_chunks=5):
         self.vector_store = MilvusHybridSearch(MILVUS_COLLECTION_NAME)
         self.num_chunks = num_chunks
 

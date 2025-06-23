@@ -30,7 +30,6 @@ class ChatGraph:
         self.workflow.add_node("web_search", WebSearchNode())
         self.workflow.add_node("retrieval_summary", lambda x: x)
 
-
         self.workflow.add_edge(START, "rag_decision")
         self.workflow.add_conditional_edges(
             "rag_decision",
@@ -71,8 +70,8 @@ if __name__ == "__main__":
     load_dotenv(dotenv_path=dotenv_path)
 
     chat = ChatGraph()
-    temp_state = chat.invoke("Hej")
-    final_state = chat.invoke("Jak zostac studentem AGH?")
+    # temp_state = chat.invoke("Hej")
+    # final_state = chat.invoke("Jak zostac studentem AGH?")
 
     # print(chat.invoke("Who is 2 + 2?"))
     # print(chat.invoke("What was my previous question?"))
