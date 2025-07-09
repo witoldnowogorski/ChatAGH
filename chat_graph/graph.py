@@ -49,7 +49,7 @@ class ChatGraph:
         )
 
     def invoke(self, message: str):
-        self.state["chat_history"] += [HumanMessage(message)]
+        self.state["chat_history"].append(HumanMessage(message))
         self.state = self.graph.invoke(self.state)
         return self.state
 
@@ -61,5 +61,4 @@ if __name__ == "__main__":
 
     chat = ChatGraph()
     temp_state = chat.invoke("Jak wygląda proces rekrutacji na AGH?")
-    print(temp_state)
-    print(temp_state["chat_history"][-1])
+    print(temp_state["chat_history"][-1].content)
