@@ -17,6 +17,6 @@ class AnswerGenerationNode(BaseNode):
             chat_history=chat_history,
             retrieved_context=retrieved_context
         )
-        state["chat_history"] += AIMessage(answer)
+        state["chat_history"].append(AIMessage(answer))
 
         return state
