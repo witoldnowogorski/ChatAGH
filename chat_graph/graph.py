@@ -17,6 +17,9 @@ from chat_graph.states import ChatState
 
 class ChatGraph:
     def __init__(self):
+
+
+
         self.workflow = StateGraph(ChatState)
 
         self.workflow.add_node("search_decision", RAGDecisionNode())

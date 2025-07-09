@@ -10,8 +10,8 @@ uri = "mongodb+srv://nowogorskiwitold:XdienEZNuuqLygzX@chatagh.ilvf5bc.mongodb.n
 class SearchNode(BaseNode):
     def __init__(
         self,
-        initial_retrieved_chunks: int = 5,
-        window_size: int = 2
+        initial_retrieved_chunks: int = 8,
+        window_size: int = 3
     ):
         self.initial_retrieved_chunks = initial_retrieved_chunks
         self.window_size = window_size
