@@ -1,3 +1,4 @@
+import os
 from pymongo import MongoClient
 
 from chat_graph.nodes.base_node import BaseNode
@@ -5,14 +6,13 @@ from chat_graph.states import ChatState
 
 from datastores.vector_store.mongo_atlas_vector_store import MongoDBVectorStore
 
-uri = "mongodb+srv://nowogorskiwitold:XdienEZNuuqLygzX@chatagh.ilvf5bc.mongodb.net/?retryWrites=true&w=majority&appName=ChatAGH"
-
 class SearchNode(BaseNode):
     def __init__(
         self,
         initial_retrieved_chunks: int = 8,
         window_size: int = 3
     ):
+        uri = os.environ.get("MONGODB_ATLAS_URI")
         self.initial_retrieved_chunks = initial_retrieved_chunks
         self.window_size = window_size
 

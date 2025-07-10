@@ -1,3 +1,4 @@
+import os
 from pymongo import MongoClient
 
 from typing import List, Dict
@@ -7,12 +8,11 @@ from datastores.vector_store.utils import bm25_similarity
 import numpy as np
 from chat_graph.states import ChatState
 
-uri = "mongodb+srv://nowogorskiwitold:XdienEZNuuqLygzX@chatagh.ilvf5bc.mongodb.net/?retryWrites=true&w=majority&appName=ChatAGH"
-
 DOC_TEMPLATE = " -> Document (url: {}): \n{}\n\n"
 
 class GraphAugmentationNode:
     def __init__(self, num_related_chunks_for_doc: int = 10):
+        uri = os.environ.get("MONGODB_ATLAS_URI")
         self.client = MongoClient(uri, tlsAllowInvalidCertificates=True)
         self.embedding_model = SentenceTransformer("intfloat/multilingual-e5-large")
         self.num_related_chunks_for_doc = num_related_chunks_for_doc
