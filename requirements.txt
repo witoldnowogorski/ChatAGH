@@ -200,7 +200,6 @@ psutil==7.0.0
 ptyprocess==0.7.0
 pure_eval==0.2.3
 puremagic==1.29
-py2neo==2021.2.4
 py_rust_stemmers==0.1.5
 pyarrow==20.0.0
 pyasn1==0.6.1
@@ -219,7 +218,6 @@ pymongo==4.13.2
 PyMuPDF==1.25.5
 pyparsing==3.2.3
 pypdf==5.3.1
-pyppeteer==2.0.0
 pyquery==2.0.1
 PySocks==1.7.1
 pytesseract==0.3.13
