@@ -11,8 +11,11 @@ from chat_graph.agents.base_agent import BaseAgent
 
 
 RAG_DECISION_PROMPT = """
+Context:
+{processed_retrieved_context}
+
 You are an AI system responsible for determining whether to use Retrieval-Augmented Generation (RAG)
-to help answer a user's question. Consider the entire chat history and decide if external knowledge is needed.
+to help answer a user's question. Consider the entire chat history and provided context and decide if external knowledge is needed.
 
 Your goal is to return a JSON object with the format: {{"use_rag": true}} or {{"use_rag": false}}
 
@@ -43,15 +46,16 @@ class RAGDecisionAgent(BaseAgent):
         self.output_parser = PydanticOutputParser(pydantic_object=RAGDecisionOutput)
 
         self.prompt = PromptTemplate(
-            input_variables=["chat_history"],
+            input_variables=["chat_history", "processed_retrieved_context"],
             template=self.prompt_template
         )
 
         self.chain: Runnable = self.prompt | self.llm | self.output_parser
 
-    def inference(self, chat_history: List[BaseMessage]) -> bool:
+    def inference(self, chat_history: List[BaseMessage], processed_retrieved_context: str) -> bool:
         result = self.chain.invoke({
-            "chat_history": get_buffer_string(chat_history)
+            "chat_history": get_buffer_string(chat_history),
+            "processed_retrieved_context": processed_retrieved_context,
         })
         return result.use_rag
 

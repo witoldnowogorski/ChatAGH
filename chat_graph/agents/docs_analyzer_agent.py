@@ -1,8 +1,10 @@
 from typing import List
 
-from langchain.prompts import PromptTemplate
 from langchain_core.documents import Document
-from langchain.output_parsers import PydanticOutputParser
+from langchain_core.messages import BaseMessage
+from langchain_core.messages.utils import get_buffer_string
+from langchain_core.output_parsers import PydanticOutputParser
+from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import Runnable
 from pydantic import BaseModel, Field
 
@@ -10,35 +12,35 @@ from chat_graph.agents.base_agent import BaseAgent
 
 
 DOCS_ANALYZER_PROMPT = """
-You are an AI assistant designed to analyze documents retrieved from knowledge base in the context of a specific question.
-
-Your task is to:
-1. Carefully read the documents and understand their content.
-2. Determine whether they provide an answer to the user's question.
-3. If the documents contain relevant and useful information, summarize it.
-4. If they **do not contain enough relevant information**, set the `web_search` flag to true.
-
-Question:
-{question}
-
-Retrieved Documents:
+EXTERNAL KNOWLEDGE:
 {retrieved_docs}
 
-Output ONLY a JSON object with the following structure:
-{{
-  "summary": "<your summary here>",
-  "web_search": <true or false>
-}}
+SYSTEM INSTRUCTION:
+You are an AI assistant designed to evaluate the relevance of external knowledge in response to a user query. Above you were provided with a retrieved documents (text containing potentially relevant information).
+Your task is to:
 
-- Do NOT include explanations, markdown, or extra text.
-- Ensure the JSON is valid and matches the required structure exactly.
-- The summary should directly relate to the user's question and be grounded in the retrieved documents.
+Determine whether the external knowledge contains any important and relevant information that can help answer the user's query.
+If relevant, provide a comprehensive summary of all such information found in the external knowledge.
+If not relevant, do not return a summary.
+Respond in strict JSON format with the following structure:
+
+{{
+  "relevant": <true | false>,
+  "summary": <string | null>
+}}
+Rules:
+
+An external knowledge is considered relevant only if it contains any non-trivial information that is both important and useful for addressing the user's query.
+Set "summary" to null if the knowledge is not relevant.
+Be comprehensive, factual, contain all information that might be related to user query and avoid speculation.
+
+User query:
+{question}
 """
 
-
 class DocsAnalyzerOutput(BaseModel):
-    summary: str = Field(..., description="Summary of the retrieved documents")
-    web_search: bool = Field(..., description="Wheather to use additional web search")
+    relevant: bool = Field(..., description="Wheather the document is relevant")
+    summary: str | None = Field(..., description="Summary of the retrieved documents")
 
 
 class DocsAnalyzerAgent(BaseAgent):
@@ -53,7 +55,7 @@ class DocsAnalyzerAgent(BaseAgent):
 
         self.chain: Runnable = self.prompt | self.llm | self.output_parser
 
-    def inference(self, question: str, retrieved_docs: List[Document]):
+    def inference(self, question: str, retrieved_docs: str):
         result = self.chain.invoke({
             "question": question,
             "retrieved_docs": retrieved_docs

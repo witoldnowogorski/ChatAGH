@@ -1,7 +1,6 @@
 from abc import abstractmethod
 
-from chat_graph.agents.base_agent import BaseAgent
-from chat_graph.state import ChatState
+from chat_graph.states import ChatState
 
 
 class BaseNode:
