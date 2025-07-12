@@ -13,7 +13,7 @@ class AnswerGenerationNode(BaseNode):
         retrieved_context = state["processed_retrieved_context"]
         chat_history = state["chat_history"]
 
-        answer = self.agent.inference(
+        answer = self.agent.run(
             chat_history=chat_history,
             retrieved_context=retrieved_context
         )

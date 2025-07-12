@@ -52,7 +52,7 @@ class RAGDecisionAgent(BaseAgent):
 
         self.chain: Runnable = self.prompt | self.llm | self.output_parser
 
-    def inference(self, chat_history: List[BaseMessage], processed_retrieved_context: str) -> bool:
+    def inference(self, chat_history: List[BaseMessage], processed_retrieved_context: str, **kwargs) -> bool:
         result = self.chain.invoke({
             "chat_history": get_buffer_string(chat_history),
             "processed_retrieved_context": processed_retrieved_context,
@@ -69,9 +69,9 @@ if __name__ == "__main__":
     ]
 
     decision_agent = RAGDecisionAgent()
-    print(decision_agent.inference(chat_history=history))
+    print(decision_agent.run(chat_history=history))
 
     history.extend([
         HumanMessage("How many faculties are there at AGH?"),
     ])
-    print(decision_agent.inference(chat_history=history))
+    print(decision_agent.run(chat_history=history))

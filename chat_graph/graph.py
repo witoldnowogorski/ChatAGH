@@ -22,9 +22,14 @@ class ChatGraph:
         self.workflow.add_node("search_decision", RAGDecisionNode())
         self.workflow.add_node("answer_generation", AnswerGenerationNode())
         self.workflow.add_node("query_generation", QueryGenerationNode())
-        self.workflow.add_node("search", SearchNode())
+        self.workflow.add_node("search", SearchNode(
+            initial_retrieved_chunks=10,
+            window_size=1
+        ))
         self.workflow.add_node("docs_analyzer", DocsAnalyzerNode())
-        self.workflow.add_node("graph_augmentation", GraphAugmentationNode())
+        self.workflow.add_node("graph_augmentation", GraphAugmentationNode(
+            num_related_chunks_for_doc=5
+        ))
 
         self.workflow.add_edge(START, "search_decision")
         self.workflow.add_edge("search_decision", END)

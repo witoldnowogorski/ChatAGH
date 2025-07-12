@@ -12,7 +12,7 @@ class QueryGenerationNode(BaseNode):
     def __call__(self, state: ChatState) -> ChatState:
         chat_history = state["chat_history"]
         processed_retrieved_context = state["processed_retrieved_context"]
-        query = self.agent.inference(
+        query = self.agent.run(
             chat_history=chat_history,
             processed_retrieved_context=processed_retrieved_context
         )
