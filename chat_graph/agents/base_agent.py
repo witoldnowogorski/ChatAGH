@@ -2,6 +2,8 @@ from abc import abstractmethod
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 
+from chat_graph.utils import log_execution_time
+
 
 class BaseAgent:
     def __init__(

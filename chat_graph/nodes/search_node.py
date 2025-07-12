@@ -3,7 +3,7 @@ from pymongo import MongoClient
 
 from chat_graph.nodes.base_node import BaseNode
 from chat_graph.states import ChatState
-
+from chat_graph.utils import log_execution_time
 from datastores.vector_store.mongo_atlas_vector_store import MongoDBVectorStore
 
 class SearchNode(BaseNode):
@@ -66,6 +66,7 @@ class SearchNode(BaseNode):
         results = list(collection.aggregate(pipeline))
         return results
 
+    @log_execution_time
     def get_chunks_windows(self, urls):
         """returns windows of chunks for each of the aggregated url's"""
         retrieved_docs = {}

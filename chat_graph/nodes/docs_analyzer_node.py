@@ -1,3 +1,5 @@
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 from chat_graph.agents.docs_analyzer_agent import DocsAnalyzerAgent
 from chat_graph.nodes.base_node import BaseNode
 from chat_graph.states import ChatState
@@ -11,14 +13,27 @@ class DocsAnalyzerNode(BaseNode):
         query = state["search_query"]
         retrieved_chunks = state["retrieved_chunks"]
 
-        analyzed_context = {}
-        for url, docs in retrieved_chunks.items():
+        def run_inference(url, docs):
             formated_docs = "\n\n\n".join([d["text"] for d in docs])
             analyzed = self.agent.inference(question=query, retrieved_docs=formated_docs)
-
             if analyzed.relevant:
-                analyzed_context[url] = analyzed.summary
+                return url, analyzed.summary
+            return None
+
+        analyzed_context = {}
+        with ThreadPoolExecutor() as executor:
+            futures = {
+                executor.submit(run_inference, url, docs): url
+                for url, docs in retrieved_chunks.items()
+            }
+
+            for future in as_completed(futures):
+                result = future.result()
+                if result:
+                    url, summary = result
+                    analyzed_context[url] = summary
 
         state["analyzed_context"] = analyzed_context
 
         return state
+
