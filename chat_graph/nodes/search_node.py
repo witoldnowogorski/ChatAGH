@@ -43,6 +43,8 @@ class SearchNode(BaseNode):
         db = self.mongo_client["chat_agh"]
         collection = db["chunks"]
 
+        collection.create_index([("metadata.url", 1), ("metadata.sequence_number", 1)])
+
         query = {
             "metadata.url": document.metadata["url"],
             "metadata.sequence_number": {
@@ -51,38 +53,38 @@ class SearchNode(BaseNode):
             }
         }
 
-        pipeline = [
-            {"$match": query},
-            {"$group": {
-                "_id": {
-                    "url": "$metadata.url",
-                    "sequence_number": "$metadata.sequence_number"
-                },
-                "doc": {"$first": "$$ROOT"}
-            }},
-            {"$replaceRoot": {"newRoot": "$doc"}}
-        ]
-
-        results = list(collection.aggregate(pipeline))
+        results = list(collection.find(query))
         return results
 
     @log_execution_time
     def get_chunks_windows(self, urls):
-        """returns windows of chunks for each of the aggregated url's"""
+        """Returns chunks for specific sequence_numbers per URL (batched and deduplicated)."""
         retrieved_docs = {}
-        for url in urls.keys():
 
-            url_docs = []
+        for url, docs in urls.items():
+            seq_numbers = set()
+            for doc in docs:
+                seq = doc.metadata["sequence_number"]
+                window_range = range(seq - self.window_size, seq + self.window_size + 1)
+                seq_numbers.update(window_range)
+
+            db = self.mongo_client["chat_agh"]
+            collection = db["chunks"]
+
+            query = {
+                "metadata.url": url,
+                "metadata.sequence_number": {"$in": list(seq_numbers)}
+            }
+            results = collection.find(query)
+
             seen = set()
-            for doc in urls[url]:
-                docs_window = self.retrieve_chunks_window(doc)
-                for d in docs_window:
-                    if (key := (d["metadata"]["url"], d["metadata"]["sequence_number"])) not in seen:
-                        url_docs.append(d)
-                        seen.add(key)
-                    else:
-                        continue
+            unique_docs = []
+            for d in results:
+                key = (d["metadata"]["url"], d["metadata"]["sequence_number"])
+                if key not in seen:
+                    seen.add(key)
+                    unique_docs.append(d)
 
-            retrieved_docs[url] = sorted(url_docs, key=lambda d: d["metadata"]["sequence_number"])
+            retrieved_docs[url] = sorted(unique_docs, key=lambda d: d["metadata"]["sequence_number"])
 
         return retrieved_docs
