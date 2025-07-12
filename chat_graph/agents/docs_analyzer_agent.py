@@ -57,7 +57,7 @@ class DocsAnalyzerAgent(BaseAgent):
         self.chain: Runnable = self.prompt | self.llm | self.output_parser
 
     @retry_on_exception(delay=1, attempts=4, backoff=5)
-    def inference(self, question: str, retrieved_docs: str):
+    def inference(self, question: str, retrieved_docs: str, **kwargs):
         result = self.chain.invoke({
             "question": question,
             "retrieved_docs": retrieved_docs

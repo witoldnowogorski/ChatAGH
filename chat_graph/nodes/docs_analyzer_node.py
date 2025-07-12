@@ -15,7 +15,7 @@ class DocsAnalyzerNode(BaseNode):
 
         def run_inference(url, docs):
             formated_docs = "\n\n\n".join([d["text"] for d in docs])
-            analyzed = self.agent.inference(question=query, retrieved_docs=formated_docs)
+            analyzed = self.agent.run(question=query, retrieved_docs=formated_docs)
             if analyzed.relevant:
                 return url, analyzed.summary
             return None
