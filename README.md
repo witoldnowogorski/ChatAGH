@@ -41,5 +41,29 @@ The diagram above presents the core component of the system responsible for retr
 In the first step of the reasoning process, the RAG Router evaluates whether the current context — built from the conversation history and cached knowledge — is sufficient to answer the user's message. If the current context is sufficient to generate a response, the system proceeds without additional retrieval. Otherwise, it activates the retrieval pathway to query the external knowledge base and extract missing information.
 
 #### Query Generator
+If the retrieval pathway was chosen the comprehensive query to the external knowledge base is generated. The LLM analyzes the query and cached context to determine missing data and provide most suitable query.
 
+#### Similarity Search
+Generated query is used to perform similarity search against chunks in the vector store, hybrid search techniques are leveraged to find the most accurate, relevant chunks.
+The retrieved chunks are grouped by their corresponding source_url. The result of this step can be represented as a dictionary-like structure, where each key is a URL (representing a node in the web graph), and the associated value is a list of retrieved chunks originating from that url.
+
+#### Context Analyzer
+In the next step, the system filters out groups of chunks to retain only those that are relevant to the user's question. For each group classified as relevant, a summary is generated, capturing all key information that may contribute to answering the query. Again, the result of this step can be represented as a dictionary-like structure, where each key is a URL, and the associated value is summary of the relevant url content.
+
+#### Context Augmentation
+This step is critical for enabling the system to reason over a broader context and uncover deeper relationships between data.
+
+For each group retained after summarization, the system queries the graph database to identify all pages directly linked to the group's source_url. The summary of the original group is then embedded and compared against all chunks associated with these neighboring nodes in the vector database.
+
+The chuks retrieved this way can be passed back into the Context Analyzer, effectively creating a loop of retrieval and analysis that can traverse the web graph iteratively. This mechanism allows the system to explore and incorporate increasingly distant but contextually relevant pages, enriching the information available for final answer generation.
+
+#### Answer Generation
+Based on the conversation history and the retrieved context, the system generates a response to the user’s latest message. The reply can range from a simple greeting to a detailed answer with source references, depending on the user’s intent and the available information.
+
+## Technologies 
+The system is built using modern tools that enable scalable retrieval and seamless integration with large language models:
+
+- MongoDB – Serves both as a vector store (via Atlas Vector Search) and a graph data store, enabling efficient semantic search and relationship retrieval across web content.
+- Gemini API –  A powerful interface to Google’s multimodal large language models, capable of processing text and other data types.
+LangGraph / LangChain – Frameworks used to define and orchestrate the system’s modular reasoning pipeline. They allow the implementation of conditional routing, memory management, and multi-step workflows aligned with the Agentic RAG architecture.
 
