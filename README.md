@@ -30,3 +30,5 @@ In the final stage, the processed data is indexed into two separate storage syst
 ## System Architecture Overview
 
 <img width="1000" height="550" alt="Screenshot 2025-07-16 at 20 01 05" src="https://github.com/user-attachments/assets/6d44ffbb-eed9-4c26-91f8-df611dd98fd6" />
+
+The diagram above presents the core component of the system responsible for retrieval, reasoning, and answer generation. This architecture integrates multiple specialized modules to enable context-aware, accurate, and source-grounded responses.
