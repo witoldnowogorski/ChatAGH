@@ -8,10 +8,10 @@ Below is a brief overview of the system architecture, data scraping and processi
 
 ## Data Collection, Processing, and Indexing
 
-<img width="1000" height="500" alt="Screenshot 2025-07-16 at 20 01 13" src="https://github.com/user-attachments/assets/24bfff7e-79b3-4c0a-97db-251625252b87" />
+<img width="1000" height="550" alt="Screenshot 2025-07-16 at 20 01 13" src="https://github.com/user-attachments/assets/24bfff7e-79b3-4c0a-97db-251625252b87" />
 
 
 
 ## System Architecture Overview
 
-<img width="1000" height="500" alt="Screenshot 2025-07-16 at 20 01 05" src="https://github.com/user-attachments/assets/6d44ffbb-eed9-4c26-91f8-df611dd98fd6" />
+<img width="1000" height="550" alt="Screenshot 2025-07-16 at 20 01 05" src="https://github.com/user-attachments/assets/6d44ffbb-eed9-4c26-91f8-df611dd98fd6" />
