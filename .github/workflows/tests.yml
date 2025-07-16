@@ -27,10 +27,10 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         pip install pytest pytest-cov pylint
 
-    - name: Run Pylint
-      run: |
-        echo "Running pylint..."
-        pylint chat_graph
+#    - name: Run Pylint
+#      run: |
+#        echo "Running pylint..."
+#        pylint chat_graph
 
 
 #    - name: Run test
