@@ -32,3 +32,14 @@ In the final stage, the processed data is indexed into two separate storage syst
 <img width="1000" height="550" alt="Screenshot 2025-07-16 at 20 01 05" src="https://github.com/user-attachments/assets/6d44ffbb-eed9-4c26-91f8-df611dd98fd6" />
 
 The diagram above presents the core component of the system responsible for retrieval, reasoning, and answer generation. This architecture integrates multiple specialized modules to enable context-aware, accurate, and source-grounded responses.
+
+#### Input
+ - The conversation history between the user and the system.
+ - The cached retrieved context, containing information previously extracted from the external knowledge base during earlier user's interactions with the system.
+
+#### RAG Router
+In the first step of the reasoning process, the RAG Router evaluates whether the current context — built from the conversation history and cached knowledge — is sufficient to answer the user's message. If the current context is sufficient to generate a response, the system proceeds without additional retrieval. Otherwise, it activates the retrieval pathway to query the external knowledge base and extract missing information.
+
+#### Query Generator
+
+
