@@ -9,6 +9,7 @@ from chat_graph.graph import ChatGraph
 
 root_path = os.path.dirname(os.path.abspath(__file__))
 dotenv_path = os.path.join(root_path, '.env')
+print(dotenv_path)
 
 load_dotenv(dotenv_path=dotenv_path)
 
@@ -204,7 +205,7 @@ with col1:
                     </div>
                 </div>
                 <div class='chat-container ai-message'>
-                    <div class='username'>RAG Assistant</div>
+                    <div class='username'>Assistant</div>
                     <div class='typing-indicator'>
                         <span></span>
                         <span></span>
@@ -217,8 +218,7 @@ with col1:
 
         try:
             response = st.session_state.chat_graph.invoke(user_input)
-            ai_messages = [msg for msg in response.get("messages", []) if isinstance(msg, AIMessage)]
-            ai_response = ai_messages[-1] if ai_messages else AIMessage("RAG NOT IMPLEMENTED")
+            ai_response = response["chat_history"][-1]
 
             st.session_state.chat_history.append(ai_response)
 

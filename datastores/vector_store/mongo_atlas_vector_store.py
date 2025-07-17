@@ -6,6 +6,8 @@ from sentence_transformers import SentenceTransformer
 import torch
 from collections import defaultdict
 
+from chat_graph.utils import log_execution_time
+
 
 class MongoDBVectorStore:
     def __init__(self, db_name: str, collection_name: str):
@@ -47,6 +49,7 @@ class MongoDBVectorStore:
 
         return results
 
+    @log_execution_time
     def search(self, query: str, k: int = 5) -> List[Document]:
         query_vector = self.dense_model.encode(query).tolist()
 

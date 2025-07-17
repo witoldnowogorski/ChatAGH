@@ -9,6 +9,7 @@ from langchain_core.runnables import Runnable
 from pydantic import BaseModel, Field
 
 from chat_graph.agents.base_agent import BaseAgent
+from chat_graph.utils import retry_on_exception
 
 
 DOCS_ANALYZER_PROMPT = """
@@ -55,7 +56,8 @@ class DocsAnalyzerAgent(BaseAgent):
 
         self.chain: Runnable = self.prompt | self.llm | self.output_parser
 
-    def inference(self, question: str, retrieved_docs: str):
+    @retry_on_exception(delay=1, attempts=4, backoff=5)
+    def inference(self, question: str, retrieved_docs: str, **kwargs):
         result = self.chain.invoke({
             "question": question,
             "retrieved_docs": retrieved_docs

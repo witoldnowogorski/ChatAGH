@@ -1,5 +1,36 @@
 import functools
+import json
+import random
 import time
+import logging
+
+from langchain_google_genai import ChatGoogleGenerativeAI
+
+
+logger = logging.getLogger("chat_graph_logger")
+logger.setLevel(logging.INFO)
+
+if not logger.handlers:
+    handler = logging.StreamHandler()
+    formatter = logging.Formatter(
+        '[%(asctime)s] [%(levelname)s] %(name)s - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+
+
+def log_execution_time(func):
+    @functools.wraps(func)
+    def wrapper(self, *args, **kwargs):
+        class_name = self.__class__.__name__
+        fun_name = func.__name__
+        start = time.time()
+        result = func(self, *args, **kwargs)
+        end = time.time()
+        print(f"[{class_name}.{fun_name}] Execution time: {end - start:.4f}s")
+        return result
+    return wrapper
 
 
 def retry_on_exception(attempts=3, delay=1, backoff=10, exception=Exception):
