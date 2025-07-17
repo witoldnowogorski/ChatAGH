@@ -6,3 +6,5 @@ milvus/volumes/
 launch.json
 *.egg-info/
 entity_network.png
+.mypy_cache/
+.vscode/
