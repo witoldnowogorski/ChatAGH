@@ -12,7 +12,7 @@ class SearchNode(BaseNode):
         initial_retrieved_chunks: int = 8,
         window_size: int = 3
     ):
-        uri = os.environ.get("MONGODB_ATLAS_URI")
+        uri = os.environ.get("MONGODB_URI")
         self.initial_retrieved_chunks = initial_retrieved_chunks
         self.window_size = window_size
 
