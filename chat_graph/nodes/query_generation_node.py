@@ -1,7 +1,7 @@
 from chat_graph.agents.query_generation_agent import QueryGenerationAgent
 from chat_graph.nodes.base_node import BaseNode
 from chat_graph.states import ChatState
-from chat_graph.utils import retry_on_exception
+from chat_graph.utils import retry_on_exception, logger
 
 
 class QueryGenerationNode(BaseNode):
@@ -10,11 +10,17 @@ class QueryGenerationNode(BaseNode):
 
     @retry_on_exception(delay=1, attempts=3)
     def __call__(self, state: ChatState) -> ChatState:
+        logger.info("Generating query to the external knowledge base ...")
+
         chat_history = state["chat_history"]
         processed_retrieved_context = state["processed_retrieved_context"]
         query = self.agent.run(
             chat_history=chat_history,
             processed_retrieved_context=processed_retrieved_context
         )
+
+        logger.info("Query to external knowledge base: {}".format(query))
+
         state["search_query"] = query
+
         return state

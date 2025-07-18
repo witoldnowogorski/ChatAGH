@@ -3,7 +3,7 @@ from pymongo import MongoClient
 
 from chat_graph.nodes.base_node import BaseNode
 from chat_graph.states import ChatState
-from chat_graph.utils import log_execution_time
+from chat_graph.utils import log_execution_time, logger
 from datastores.vector_store.mongo_atlas_vector_store import MongoDBVectorStore
 
 class SearchNode(BaseNode):
@@ -20,11 +20,21 @@ class SearchNode(BaseNode):
         self.mongo_client = MongoClient(uri, tlsAllowInvalidCertificates=True)
 
     def __call__(self, state: ChatState) -> ChatState:
+        logger.info("Performing similarity search on vector store ...")
+
         query = state["search_query"]
         retrieved_chunks = self.vector_store.search(query, k=self.initial_retrieved_chunks)
+
         aggregated_docs = self.aggregate_by_document(retrieved_chunks)
+
+        logger.info(
+            "Retrieved {} documents, source urls: {}".format(len(retrieved_chunks), aggregated_docs.keys())
+        )
+
         chunks_windows = self.get_chunks_windows(aggregated_docs)
+
         state["retrieved_chunks"] = chunks_windows
+
         return state
 
     @staticmethod

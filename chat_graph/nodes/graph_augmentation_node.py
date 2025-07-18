@@ -6,7 +6,10 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
 from datastores.vector_store.utils import bm25_similarity
 import numpy as np
+
 from chat_graph.states import ChatState
+from chat_graph.utils import logger
+
 
 DOC_TEMPLATE = " -> Document (url: {}): \n{}\n\n"
 
@@ -18,6 +21,8 @@ class GraphAugmentationNode:
         self.num_related_chunks_for_doc = num_related_chunks_for_doc
 
     def __call__(self, state: ChatState) -> ChatState:
+        logger.info("Augmenting context ...")
+
         analyzed_context = state["analyzed_context"]
 
         context = []
@@ -30,6 +35,8 @@ class GraphAugmentationNode:
 
     def process_single_url(self, url, summary) -> str:
         related_urls = self.find_related_urls(url)
+
+        logger.info("Found {} related URLs for {}".format(len(related_urls), url))
 
         chunks = []
         for url in related_urls:
@@ -87,7 +94,6 @@ class GraphAugmentationNode:
     def get_chunks_for_url(self, url: str):
         """Returns all chunks for a given url."""
         collection = self.client["chat_agh"]["chunks"]
-        print(collection)
         return list(collection.find({"metadata.url": url}))
 
     def combined_similarity(
