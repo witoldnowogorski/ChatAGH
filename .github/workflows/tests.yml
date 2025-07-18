@@ -32,6 +32,10 @@ jobs:
 #        echo "Running pylint check..."
 #        pylint --disable=missing-module-docstring  chat_graph
 
+    - name: Download NLTK punkt data
+      run: |
+        python -m nltk.downloader punkt
+
     - name: Run test
       env:
         GEMINI_API_KEYS: ${{ secrets.GEMINI_API_KEYS }}
