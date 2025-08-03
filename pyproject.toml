@@ -23,7 +23,6 @@ dependencies = [
     "nltk==3.9.1",
     "numpy==1.26.4",
     "pandas==2.0.3",
-    "pathlib==1.0.1",
     "pdf2image==1.17.0",
     "plotly==6.1.0",
     "pydantic==2.11.4",
@@ -32,6 +31,7 @@ dependencies = [
     "pytesseract==0.3.13",
     "rank-bm25==0.2.2",
     "requests==2.32.3",
+    "scikit-learn>=1.3.2",
     "seaborn==0.13.2",
     "sentence-transformers==3.4.1",
     "streamlit==1.43.2",
@@ -41,3 +41,27 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 include = ["chat_graph", "datastore", "web_scraping"]
+
+[tool.deptry.package_module_name_map]
+bs4 = ["bs4"]
+dotenv = ["dotenv"]
+html2text = ["html2text"]
+langchain = ["langchain"]
+langchain-core = ["langchain_core"]
+langchain-google-genai = ["langchain_google_genai"]
+langchain-text-splitters = ["langchain_text_splitters"]
+langgraph = ["langgraph"]
+markdown = ["markdown"]
+matplotlib = ["matplotlib"]
+networkx = ["networkx"]
+pdf2image = ["pdf2image"]
+plotly = ["plotly"]
+pydantic = ["pydantic"]
+pymilvus = ["pymilvus"]
+pymongo = ["pymongo"]
+pytesseract = ["pytesseract"]
+scikit-learn = ["sklearn"]
+seaborn = ["seaborn"]
+sentence-transformers = ["sentence_transformers"]
+streamlit = ["streamlit"]
+torch = ["torch"]
