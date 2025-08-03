@@ -1,4 +1,5 @@
 .idea/
+.env.*
 .env
 logs/
 **/__pycache__/
@@ -6,3 +7,5 @@ milvus/volumes/
 launch.json
 *.egg-info/
 entity_network.png
+.venv/
+.vscode/
