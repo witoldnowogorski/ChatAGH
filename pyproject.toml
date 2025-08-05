@@ -7,7 +7,7 @@ name = "rag"
 version = "0.1"
 requires-python = ">=3.12,<3.13"
 description = "A Python package for RAG utilities"
-authors = [{name = "Witold Nowogrski, Micha Dyrek, Mateusz Walczak"}]
+authors = [{name = "Witold Nowógrski, Michał Dyrek, Mateusz Walczak"}]
 dependencies = [
     "bs4==0.0.2",
     "dotenv==0.9.9",
