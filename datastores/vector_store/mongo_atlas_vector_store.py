@@ -1,10 +1,10 @@
 import os
 from typing import List
+
+import torch
 from langchain_core.documents import Document
 from pymongo import MongoClient, TEXT
 from sentence_transformers import SentenceTransformer
-import torch
-from collections import defaultdict
 
 from chat_graph.utils import log_execution_time
 
