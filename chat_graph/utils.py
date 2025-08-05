@@ -23,7 +23,7 @@ def log_execution_time(func):
         start = time.time()
         result = func(self, *args, **kwargs)
         end = time.time()
-        print(f"[{class_name}.{fun_name}] Execution time: {end - start:.4f}s")
+        logger.info(f"[{class_name}.{fun_name}] Execution time: {end - start:.4f}s")
         return result
     return wrapper
 

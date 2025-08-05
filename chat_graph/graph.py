@@ -2,7 +2,7 @@ import os
 
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage
-from langgraph.graph.state import StateGraph, END, START
+from langgraph.graph.state import StateGraph, START, END
 
 from chat_graph.nodes import (
     RAGDecisionNode,
@@ -24,15 +24,14 @@ class ChatGraph:
         self.workflow.add_node("query_generation", QueryGenerationNode())
         self.workflow.add_node("search", SearchNode(
             initial_retrieved_chunks=10,
-            window_size=1
+            window_size=3
         ))
         self.workflow.add_node("docs_analyzer", DocsAnalyzerNode())
         self.workflow.add_node("graph_augmentation", GraphAugmentationNode(
-            num_related_chunks_for_doc=5
+            num_related_chunks_for_doc=10
         ))
 
         self.workflow.add_edge(START, "search_decision")
-        self.workflow.add_edge("search_decision", END)
         self.workflow.add_conditional_edges(
             "search_decision",
             lambda state: "query_generation" if state["rag_decision"] else "answer_generation"
@@ -41,6 +40,7 @@ class ChatGraph:
         self.workflow.add_edge("search", "docs_analyzer")
         self.workflow.add_edge("docs_analyzer", "graph_augmentation")
         self.workflow.add_edge("graph_augmentation", "answer_generation")
+        self.workflow.add_edge("answer_generation", END)
 
         self.graph = self.workflow.compile()
 
