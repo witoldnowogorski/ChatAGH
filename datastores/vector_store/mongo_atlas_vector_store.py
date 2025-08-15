@@ -11,7 +11,7 @@ from chat_graph.utils import log_execution_time
 
 class MongoDBVectorStore:
     def __init__(self, db_name: str, collection_name: str):
-        uri = os.environ["MONGODB_ATLAS_URI"]
+        uri = os.environ["MONGODB_URI"]
         self.client = MongoClient(uri)
         self.db = self.client[db_name]
         self.collection = self.db[collection_name]

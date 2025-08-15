@@ -21,21 +21,24 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
+    - name: Install dependencies
+      run: |
+         python -m pip install --upgrade pip
+         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+         pip install pytest pytest-cov
+
 #    - name: Run Pylint
 #      run: |
-#        echo "Running pylint..."
-#        pylint chat_graph
+#        echo "Running pylint check..."
+#        pylint --disable=missing-module-docstring  chat_graph
 
-    # - name: Install dependencies
-    #   run: |
-    #     python -m pip install --upgrade pip
-    #     if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    #     pip install pytest pytest-cov
+    - name: Download NLTK punkt data
+      run: |
+        python -m nltk.downloader punkt punkt_tab
 
-#    - name: Run test
-#      env:
-#        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-#        MILVUS_TOKEN: ${{ secrets.MILVUS_TOKEN }}
-#        MILVUS_URI: ${{ secrets.MILVUS_URI }}
-#      run: |
-#        pytest --cov=./ --cov-report=xml
+    - name: Run test
+      env:
+        GEMINI_API_KEYS: ${{ secrets.GEMINI_API_KEYS }}
+        MONGODB_URI: ${{ secrets.MONGODB_URI }}
+      run: |
+        pytest --cov=./ --cov-report=xml

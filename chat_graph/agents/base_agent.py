@@ -19,12 +19,8 @@ class BaseAgent:
     ):
         self.prompt_template: str = prompt_template
         self.model_name: str = model_name
-        self.path: str | None = os.environ["GEMINI_API_KEYS_PATH"]
-        if self.path is None:
-            raise AgentError("GEMINI_API_KEYS_PATH env variable is not set, unable to load api keys")
-        else:
-            with open(self.path, "r") as f:
-                self.api_keys = json.load(f)
+
+        self.api_keys = json.loads(os.getenv("GEMINI_API_KEYS", "[]"))
 
         self.llm: ChatGoogleGenerativeAI = ChatGoogleGenerativeAI(model=model_name, api_key=self.api_keys[0])
 

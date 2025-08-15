@@ -16,19 +16,35 @@ from chat_graph.states import ChatState
 
 
 class ChatGraph:
-    def __init__(self):
+    """
+    ChatGraph defines a conversational workflow for a Retrieval-Augmented Generation (RAG) system
+    using a stateful graph architecture.
+
+    The workflow includes:
+    - A decision node to determine whether document retrieval is needed.
+    - External knowledge base query generation.
+    - A search node to retrieve relevant documents.
+    - A document analysis and augmentation phase to enrich the context.
+    - A final answer generation node.
+
+    Parameters (as keyword arguments):
+    - initial_retrieved_chunks (int): Number of initial documents to retrieve during the search phase.
+    - window_size (int): Size of the window of chunks to retrieve.
+    - num_augmentation_chunks (int): Number of chunks retrieved in context augmentation phase.
+    """
+    def __init__(self, **kwargs):
         self.workflow = StateGraph(ChatState)
 
         self.workflow.add_node("search_decision", RAGDecisionNode())
         self.workflow.add_node("answer_generation", AnswerGenerationNode())
         self.workflow.add_node("query_generation", QueryGenerationNode())
         self.workflow.add_node("search", SearchNode(
-            initial_retrieved_chunks=10,
-            window_size=3
+            initial_retrieved_chunks=kwargs.get("initial_retrieved_chunks", 10),
+            window_size=kwargs.get("window_size", 2)
         ))
         self.workflow.add_node("docs_analyzer", DocsAnalyzerNode())
         self.workflow.add_node("graph_augmentation", GraphAugmentationNode(
-            num_related_chunks_for_doc=10
+            num_related_chunks_for_doc=kwargs.get("num_augmentation_chunks", 5)
         ))
 
         self.workflow.add_edge(START, "search_decision")
@@ -58,6 +74,11 @@ class ChatGraph:
         self.state = self.graph.invoke(self.state)
         return self.state
 
+    def invoke_stream(self, message: str):
+        self.state["chat_history"].append(HumanMessage(message))
+        for chunk in self.graph.stream(self.state, stream_mode="custom"):
+            yield chunk.content
+
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.dirname(os.path.dirname(current_dir))
@@ -65,5 +86,5 @@ if __name__ == "__main__":
     load_dotenv(dotenv_path=dotenv_path)
 
     chat = ChatGraph()
-    temp_state = chat.invoke("Jak wygląda proces rekrutacji na AGH?")
+    temp_state = chat.invoke("Ilu studentów studiuje na AGH?")
     print(temp_state["chat_history"][-1].content)

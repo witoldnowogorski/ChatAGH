@@ -1,3 +1,4 @@
+from langgraph.config import get_stream_writer
 from langchain_core.messages import AIMessage
 
 from chat_graph.agents import AnswerGenerationAgent
@@ -12,14 +13,20 @@ class AnswerGenerationNode(BaseNode):
 
     def __call__(self, state: ChatState) -> ChatState:
         logger.info("Generating final answer ...")
+        writer = get_stream_writer()
 
         retrieved_context = state["processed_retrieved_context"]
         chat_history = state["chat_history"]
 
-        answer = self.agent.run(
-            chat_history=chat_history,
-            retrieved_context=retrieved_context
-        )
+        args = {
+            "chat_history": chat_history,
+            "retrieved_context": retrieved_context
+        }
+        for response_chunk in self.agent.stream_response(**args):
+            writer(response_chunk)
+
+        answer = ""
+
         state["chat_history"].append(AIMessage(answer))
 
         logger.info("Answer generation completed.")

@@ -1,4 +1,7 @@
+import random
+
 from langchain_core.messages import AIMessage
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
 from langchain_core.messages.utils import get_buffer_string
 from langchain_core.runnables import Runnable
@@ -49,10 +52,26 @@ class AnswerGenerationAgent(BaseAgent):
 
     def inference(self, chat_history, retrieved_context):
         chat_history = get_buffer_string(chat_history)
-
         response = self.chain.invoke({
             "chat_history": chat_history,
             "retrieved_context": retrieved_context
         })
 
         return response.content
+
+    def stream_response(self, chat_history, retrieved_context):
+        chat_history = get_buffer_string(chat_history)
+        start_state = {
+            "chat_history": chat_history,
+            "retrieved_context": retrieved_context
+        }
+        for chunk in self.chain.stream(start_state):
+            yield chunk
+
+    def run(self):
+        api_key = random.choice(self.api_keys)
+        self.llm = ChatGoogleGenerativeAI(
+            model=self.model_name,
+            api_key=api_key,
+        )
+
