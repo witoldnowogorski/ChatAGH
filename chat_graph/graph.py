@@ -74,6 +74,11 @@ class ChatGraph:
         self.state = self.graph.invoke(self.state)
         return self.state
 
+    def invoke_stream(self, message: str):
+        self.state["chat_history"].append(HumanMessage(message))
+        for chunk in self.graph.stream(self.state, stream_mode="custom"):
+            yield chunk.content
+
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.dirname(os.path.dirname(current_dir))

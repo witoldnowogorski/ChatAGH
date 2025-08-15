@@ -196,8 +196,9 @@ with col1:
     if st.session_state.get("pending_user_message"):
         user_input = st.session_state.pending_user_message
         with chat_container:
-            typing_indicator = st.empty()
-            typing_indicator.markdown("""
+            # Initial AI "typing" bubble
+            ai_message_box = st.empty()
+            ai_message_box.markdown("""
             <div class='message-row'>
                 <div style='margin-right: 10px;'>
                     <div style='background-color: #7E57C2; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;'>
@@ -206,33 +207,48 @@ with col1:
                 </div>
                 <div class='chat-container ai-message'>
                     <div class='username'>Assistant</div>
-                    <div class='typing-indicator'>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                    <div class='message-content'></div>
                 </div>
             </div>
             <div class='clear'></div>
             """, unsafe_allow_html=True)
 
         try:
-            response = st.session_state.chat_graph.invoke(user_input)
-            ai_response = response["chat_history"][-1]
+            full_ai_text = ""
+            for chunk in st.session_state.chat_graph.invoke_stream(user_input):
+                # Assuming `chunk` is just a text fragment
+                full_ai_text += chunk
+                content_html = markdown.markdown(full_ai_text)
+                ai_message_box.markdown(f"""
+                    <div class='message-row'>
+                        <div style='margin-right: 10px;'>
+                            <div style='background-color: #7E57C2; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;'>
+                                AI
+                            </div>
+                        </div>
+                        <div class='chat-container ai-message'>
+                            <div class='username'>Assistant</div>
+                            <div class='message-content'>{content_html}</div>
+                        </div>
+                    </div>
+                    <div class='clear'></div>
+                """, unsafe_allow_html=True)
 
-            st.session_state.chat_history.append(ai_response)
+            # Once streaming ends, save the message
+            ai_msg_obj = AIMessage(content=full_ai_text)
+            st.session_state.chat_history.append(ai_msg_obj)
 
-            if show_rag_info and "use_rag" in response:
-                rag_status = "Used RAG" if response["use_rag"] else "Did not use RAG"
-                st.session_state.chat_history.append(
-                    AIMessage(content=f"_System info: {rag_status} for this query._"))
+            # Optionally show RAG info
+            if show_rag_info and hasattr(st.session_state.chat_graph, "last_use_rag"):
+                rag_status = "Used RAG" if st.session_state.chat_graph.last_use_rag else "Did not use RAG"
+                st.session_state.chat_history.append(AIMessage(content=f"_System info: {rag_status} for this query._"))
 
         except Exception as e:
             st.session_state.chat_history.append(AIMessage(content=f"Error: {str(e)}"))
 
         st.session_state.pending_user_message = None
-        typing_indicator.empty()
         st.rerun()
+
 
     def handle_chat_input():
         user_input = st.session_state.user_input
