@@ -1,0 +1,556 @@
+[
+    {
+    "question": "Od kiedy obowi\u0105zuj\u0105 podane stawki za akademiki AGH?",
+    "answer": "Podane stawki obowi\u0105zuj\u0105 od 1 marca 2025 roku.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/en/resident-zone/pricing.html#Basic",
+      "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Jaka jest op\u0142ata za pobyt w pokoju standardu Basic dla studenta AGH?",
+    "answer": "Op\u0142ata za pok\u00f3j w standardzie Basic dla studenta AGH wynosi 490,00 z\u0142 miesi\u0119cznie.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/en/resident-zone/pricing.html#Basic",
+      "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie udogodnienia s\u0105 dost\u0119pne dla mieszka\u0144c\u00f3w wszystkich akademik\u00f3w?",
+    "answer": "Wszyscy mieszka\u0144cy maj\u0105 bezp\u0142atny dost\u0119p do pralni, boiska (do pi\u0142ki no\u017cnej, siatk\u00f3wki, koszyk\u00f3wki) i rezerwacji kort\u00f3w tenisowych. W ka\u017cdym akademiku dost\u0119pne s\u0105 pokoje telewizyjne i si\u0142ownie. Dost\u0119p do Internetu i telewizji kablowej w ka\u017cdym pokoju jest wliczony w cen\u0119 akademika. Podczas zameldowania studenci otrzymuj\u0105 po\u015bciel, kt\u00f3ra jest wymieniana co trzy tygodnie.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/en/resident-zone/pricing.html#Basic",
+      "language": "polish",
+      "reviewed": ["WN"]
+    },
+  {
+    "question": "Ile wynosi dodatkowa op\u0142ata za zameldowanie lub zmian\u0119 akademika?",
+    "answer": "Za ka\u017cde zameldowanie i zmian\u0119 akademika pobierana jest dodatkowa op\u0142ata w wysoko\u015bci 25 z\u0142 (netto).",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/en/resident-zone/pricing.html#Basic",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Jaka jest r\u00f3\u017cnica mi\u0119dzy pokojami w standardzie Comfort a Comfort+?",
+    "answer": "Pokoje Comfort+ to w pe\u0142ni umeblowane pokoje dwuosobowe z prywatnymi \u0142azienkami i ma\u0142ymi aneksami kuchennymi. Pokoje Comfort to dwa pokoje dwuosobowe po\u0142\u0105czone w studio, ze wsp\u00f3ln\u0105 \u0142azienk\u0105 i aneksem kuchennym.",
+    "difficulty": "medium",
+    "question_type": "reasoning",
+    "source_url": "https://www.miasteczko.agh.edu.pl/en/resident-zone/pricing.html#Basic",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },  {
+    "question": "Jakie s\u0105 ceny za pok\u00f3j w standardzie Comfort+ dla student\u00f3w AGH studi\u00f3w stacjonarnych i doktoranckich?",
+    "answer": "Dla student\u00f3w AGH studi\u00f3w stacjonarnych i doktoranckich, cena za pok\u00f3j w standardzie Comfort+ wynosi 580,00 z\u0142 miesi\u0119cznie (plus 20,00 z\u0142 dziennie).",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/en/resident-zone/pricing.html#Comfort",
+    "language": "polish"
+  },
+    {
+    "question": "Jak r\u00f3\u017cni si\u0119 standard Basic od Comfort?",
+    "answer": "Standard Basic obejmuje w pe\u0142ni umeblowane dwa pokoje dwuosobowe i dwa pokoje trzyosobowe (z \u0142\u00f3\u017ckami pi\u0119trowymi) ze wsp\u00f3ln\u0105 \u0142azienk\u0105. Lod\u00f3wka znajduje si\u0119 w ka\u017cdym pokoju, a du\u017ca kuchnia na ka\u017cdym pi\u0119trze. Standard Comfort obejmuje w pe\u0142ni umeblowane dwa pokoje dwuosobowe po\u0142\u0105czone w studio, ze wsp\u00f3ln\u0105 \u0142azienk\u0105 i aneksem kuchennym. Du\u017ca kuchnia znajduje si\u0119 na ka\u017cdym pi\u0119trze. Wi\u0119kszo\u015b\u0107 \u0142\u00f3\u017cek jest pojedynczych, ale cz\u0119\u015bciowo r\u00f3wnie\u017c pi\u0119trowych.",
+    "difficulty": "medium",
+    "question_type": "reasoning",
+    "source_url": "https://www.miasteczko.agh.edu.pl/en/resident-zone/pricing.html#Comfort",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Jaka jest cena za drugie miejsce w pokoju dwuosobowym, je\u015bli mieszka w nim tylko jedna osoba?",
+    "answer": "Dla mieszka\u0144c\u00f3w, kt\u00f3rzy mieszkaj\u0105 sami w pokoju dwuosobowym, cena za drugie miejsce wynosi 100% stawki okre\u015blonej w cenniku.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/en/resident-zone/pricing.html#Comfort",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Co nale\u017cy zrobi\u0107 w przypadku utraty klucza systemowego w akademiku?",
+    "answer": "Utrat\u0119 klucza powinno si\u0119 natychmiast zg\u0142osi\u0107 Administracji obiektu, w celu uruchomienia w\u0142a\u015bciwych procedur bezpiecze\u0144stwa.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/modules/DownloadManager/download.php?alias=zasady-uzytkowania-kluczy-systemowych-ms-agh-08-07-2024-3-1",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Jakie koszty ponosi u\u017cytkownik w przypadku utraty klucza systemowego w akademiku i dlaczego?",
+    "answer": "Utrata klucza b\u0119dzie skutkowa\u0107 obci\u0105\u017ceniem u\u017cytkownika kosztami utraty klucza wynikaj\u0105cymi z technicznych uwarunkowa\u0144 systemowych zwi\u0105zanych z realizowanymi przez system warunkami bezpiecze\u0144stwa obiektu.",
+    "difficulty": "hard",
+    "question_type": "why/how",
+    "source_url": "https://www.miasteczko.agh.edu.pl/modules/DownloadManager/download.php?alias=zasady-uzytkowania-kluczy-systemowych-ms-agh-08-07-2024-3-1",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie obiekty wchodz\u0105 w sk\u0142ad Miasteczka Studenckiego AGH?",
+    "answer": "W sk\u0142ad Miasteczka wchodz\u0105 obiekty stanowi\u0105ce w\u0142asno\u015b\u0107 Uczelni: domy studenckie oraz \u015bci\u015ble zwi\u0105zane z nimi obiekty pomocnicze i us\u0142ugowe, boiska sportowe i obiekty rekreacyjne, ci\u0105gi i obiekty komunikacyjne, infrastruktura techniczna.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/modules/DownloadManager/download.php?alias=regulamin-miasteczka",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Kto powo\u0142uje Rad\u0119 Miasteczka Studenckiego AGH i jaka jest jej rola?",
+    "answer": "Rad\u0119 Miasteczka Studenckiego AGH powo\u0142uje Rektor AGH. Rada jest organem nadzoruj\u0105cym funkcjonowanie Miasteczka, zw\u0142aszcza w zakresie jego administracji, oraz organem konsultacyjno-doradczym Rektora AGH w zakresie zarz\u0105dzania Miasteczkiem.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/modules/DownloadManager/download.php?alias=regulamin-miasteczka",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "W jaki spos\u00f3b Dyrektor Miasteczka Studenckiego AGH dysponuje \u015brodkami finansowymi?",
+    "answer": "Dyrektor Miasteczka dysponuje \u015brodkami finansowymi wynikaj\u0105cymi z bud\u017cetu Miasteczka w zakresie pe\u0142nomocnictw udzielonych przez Rektora, racjonalnie i zgodnie z prawem.",
+    "difficulty": "medium",
+    "question_type": "how/why",
+    "source_url": "https://www.miasteczko.agh.edu.pl/modules/DownloadManager/download.php?alias=regulamin-miasteczka",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Jakie s\u0105 \u017ar\u00f3d\u0142a przychod\u00f3w Miasteczka Studenckiego AGH?",
+    "answer": "Przychodami Miasteczka s\u0105: op\u0142aty wnoszone przez mieszka\u0144c\u00f3w dom\u00f3w studenckich, inne przychody w szczeg\u00f3lno\u015bci z tytu\u0142u dora\u017anego udost\u0119pniania zasob\u00f3w mieszkaniowych, prowadzonej dzia\u0142alno\u015bci hostelowej, nale\u017cno\u015bci za czynsze i dzier\u017cawy, darowizn, sprzeda\u017cy zb\u0119dnych sk\u0142adnik\u00f3w maj\u0105tku, \u015bwiadczenia us\u0142ug. Dodatkowo \u015brodki z Funduszu Pomocy Materialnej, celowe dotacje MNiSW oraz odpisy i dotacje z funduszu zasadniczego Uczelni.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/modules/DownloadManager/download.php?alias=regulamin-miasteczka",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Jak naliczana jest op\u0142ata w przypadku pobytu kr\u00f3tszego ni\u017c pe\u0142ny miesi\u0105c kalendarzowy?",
+    "answer": "Dla okres\u00f3w rozliczeniowych kr\u00f3tszych ni\u017c pe\u0142ny miesi\u0105c kalendarzowy, dla kt\u00f3rych nale\u017cno\u015b\u0107 naliczona wg stawek dobowych jest wi\u0119ksza od op\u0142aty miesi\u0119cznej, stosuje si\u0119 op\u0142at\u0119 miesi\u0119czn\u0105.",
+    "difficulty": "medium",
+    "question_type": "why/how",
+    "source_url": "https://www.miasteczko.agh.edu.pl/strefa-mieszkanca/cennik.html#Podstawowy",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Jak cz\u0119sto wymieniana jest po\u015bciel w akademikach Miasteczka Studenckiego AGH?",
+    "answer": "Wymiana po\u015bcieli odbywa si\u0119 co 3 tygodnie.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/strefa-mieszkanca/cennik.html#Podstawowy",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "W jakich domach studenckich mo\u017cna znale\u017a\u0107 pokoje o standardzie Komfort+?",
+    "answer": "Pokoje o standardzie Komfort+ znajduj\u0105 si\u0119 w domach studenckich DS9, DS16, DS17, DS18 i DS19.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/strefa-mieszkanca/cennik.html#Podstawowy",
+     "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie akademiki oferuj\u0105 pokoje o standardzie Basic?",
+    "answer": "Pokoje o standardzie Basic oferowane s\u0105 w DS3, DS6, DS8 i DS14.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/en/pricing.html",
+      "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "W jaki spos\u00f3b miasteczko studenckie AGH wykorzystuje swoje zasoby w okresie wakacyjnym?",
+    "answer": "Od lipca do wrze\u015bnia miasteczko studenckie AGH oferuje ponad 4000 miejsc noclegowych w akademikach dla turyst\u00f3w odwiedzaj\u0105cych Krak\u00f3w. Przez ca\u0142y rok akademicki w DS 2 Babilon dzia\u0142a hostel z 330 miejscami w pokojach typu studio z indywidualnymi \u0142azienkami i aneksami kuchennymi.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://miasteczko.agh.edu.pl/en/about-us.html",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Ile student\u00f3w mieszka w miasteczku studenckim AGH?",
+    "answer": "W 20 domach studenckich mieszka ponad 7000 student\u00f3w, co czyni miasteczko studenckie AGH najwi\u0119kszym tego typu miejscem w Polsce.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://miasteczko.agh.edu.pl/en/about-us.html",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie kroki nale\u017cy podj\u0105\u0107, aby ubiega\u0107 si\u0119 o kart\u0119 otwieraj\u0105c\u0105 szlaban na parkingu dla os\u00f3b z niepe\u0142nosprawno\u015bciami przy ul. Rostafi\u0144skiego?",
+    "answer": "Istnieje mo\u017cliwo\u015b\u0107 ubiegania si\u0119 o kart\u0119 otwieraj\u0105c\u0105 szlaban lub zg\u0142oszenia potrzeby pomocy pracownikowi Centrum Monitoringu, kt\u00f3ry dost\u0119pny jest ca\u0142odobowo.",
+    "difficulty": "medium",
+    "question_type": "why/how",
+    "source_url": "https://www.miasteczko.agh.edu.pl/pl/horizontal/deklaracja-dostepnosci.html",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Gdzie znajduje si\u0119 wej\u015bcie g\u0142\u00f3wne do budynku Dzia\u0142u Dom\u00f3w Studenckich MS AGH i jak jest ono dost\u0119pne?",
+    "answer": "Wej\u015bcie g\u0142\u00f3wne do budynku znajduje si\u0119 przy ulicy Rostafi\u0144skiego 8 (Dom Studencki numer 5 Strumyk). Przy wej\u015bciu do budynku znajduj\u0105 si\u0119 schody oraz podjazd dla os\u00f3b poruszaj\u0105cych si\u0119 na w\u00f3zkach.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/pl/horizontal/deklaracja-dostepnosci.html",
+      "language": "polish",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Do kogo mo\u017cna zg\u0142osi\u0107 uwagi dotycz\u0105ce dost\u0119pno\u015bci cyfrowej strony Miasteczka Studenckiego AGH?",
+    "answer": "Uwagi dotycz\u0105ce dost\u0119pno\u015bci cyfrowej strony Miasteczka Studenckiego AGH mo\u017cna zg\u0142asza\u0107 do Ewy Pawlak, poprzez e-mail epawlak@agh.edu.pl lub telefonicznie pod numerem +48 12 617 37 25.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/pl/horizontal/deklaracja-dostepnosci.html",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie obiekty sportowe s\u0105 dost\u0119pne dla mieszka\u0144c\u00f3w miasteczka studenckiego AGH i czy s\u0105 one p\u0142atne?",
+    "answer": "Wszyscy nasi mieszka\u0144cy maj\u0105 bezp\u0142atny dost\u0119p do pralni i obiekt\u00f3w sportowych (boisko do siatk\u00f3wki, boisko do koszyk\u00f3wki, boisko do pi\u0142ki no\u017cnej i si\u0142ownie) - rezerwacje.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/en/about-us.html",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Czy mog\u0119 mieszka\u0107 sam w pokoju dwuosobowym?",
+    "answer": "Tak. Aby to zrobi\u0107, nale\u017cy z\u0142o\u017cy\u0107 wniosek za po\u015brednictwem <https://akademik.agh.edu.pl> z pro\u015bb\u0105 o dodatkowe miejsce, aby mieszka\u0107 sam w pokoju dwuosobowym. Wi\u0105\u017ce si\u0119 to z konieczno\u015bci\u0105 zap\u0142aty za dwa miejsca (zgodnie z cennikiem). Wnioski te s\u0105 rozpatrywane w zale\u017cno\u015bci od dost\u0119pno\u015bci wolnych miejsc.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/en/questions-and-answers.html",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Jak mog\u0119 ubiega\u0107 si\u0119 o miejsce w akademiku AGH?",
+    "answer": "Wszelkie informacje na ten temat znajduj\u0105 si\u0119 na stronie <https://akademik.agh.edu.pl> w zak\u0142adce \u2018Information for students\u2019.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://www.miasteczko.agh.edu.pl/en/questions-and-answers.html",
+    "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Where can I find the map of the AGH campus?",
+    "answer": "The AGH campus map can be found here: https://www.agh.edu.pl/en/o-agh/kontakt/mapa-agh",
+    "document": "https://www.agh.edu.pl/en/o-agh/kontakt/mapa-agh",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "How many faculties are there at the AGH University?",
+    "answer": "There are 17 faculties at the AGH University.",
+    "document": "https://www.agh.edu.pl/en/o-agh/fakty-i-liczby",
+      "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "How many programmes were there at the AGH University in 2023/2024?",
+    "answer": "There were 81 degree programmes in the academic year 2023/2024.",
+    "document": "https://www.agh.edu.pl/en/o-agh/fakty-i-liczby",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "When does the academic 2024 year end?",
+    "answer": "The academic year shall begin on 30th of September",
+    "document": "https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Could there be more than one exam in given day?",
+    "answer": "No, no more than one examination should take place per one session day. ",
+    "document": "https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Can i have classes before 7 a.m.?",
+    "answer": "No, classes shall be held from 7.30 to 20.30.",
+    "document": "https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf 19:20",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Can I take a dean's leave if I have a child?",
+    "answer": "Yes, the Dean of the Faculty shall grant a student a leave from classes at the University if student has to take care of the child",
+    "document": "https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Do I have to know prolog if i am attending Knowledge Representation and Knowledge Engineering course?",
+    "answer": "Yes, knowledge of Prolog programming language is a requirement for this course",
+    "document": "https://sylabusy.agh.edu.pl/en/document/ebe34a12-7187-4e90-8548-7115db51d385.pdf",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "What are the conditions that a student need to be in that qualify him be granted the individual organization of studies (IOS)?",
+    "answer": "The student must be: especially gifted and distinguished in science or with disabilities or in a difficult life situation or participating in sports competitions at national or international level or wishing to complete part of their studies at another university or studying in more than one field of study or elected to the collegiate body of the University or for whom the learning outcomes have been confirmed or foreigners undergoing a Polish language course",
+    "document": "https://www.agh.edu.pl/home/ckim/dokumenty/regulaminy/EN/2023_10_01_RS_ENG.pdf",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "What could be the form of a diploma projects and diploma thesis?",
+    "answer": "A diploma thesis or diploma project may be on of those: a written essay, a published article, a project work, including an engineering project, execution of a computer program or system, as well as construction, technological or artistic work.",
+    "document": "https://www.agh.edu.pl/home/ckim/dokumenty/regulaminy/EN/2023_10_01_RS_ENG.pdf",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Can a Dean of the Faculty extend the payment deadlines?",
+    "answer": "Yes he can extend the fee for educational services.",
+    "document": "https://www.international.agh.edu.pl/home/dsz/akty_prawne_EN/RPO_EN.pdf",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "What is the summer holiday period specified in the AGH University academic year schedule for 2024/2025?",
+    "answer": "The summer holidays are scheduled from July 7 to August 31",
+    "document": "https://www.agh.edu.pl/en/students/academic-year-schedule",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "When must a student submit their diploma project or diploma thesis in electronic form via the USOS System? ",
+    "answer": "A student is required to submit their diploma project or diploma thesis in electronic form via the USOS System by the end of February for studies ending in the winter semester, or by the end of September for studies ending in the summer semester.",
+    "document": "https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "What happens if my coursework is found to be not independent (e.g., due to plagiarism)?",
+    "answer": "If your work is found not to be independent, you will receive an unsatisfactory grade, lose the right to retake the class, fail the course, and a \"nzal.\" (not passed) note will be recorded in the USOS system.",
+    "document": "https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Can I take an exam before the regular examination session?",
+    "answer": "Yes, you may take an exam on the so-called zero date before the examination session if allowed by the course teacher. This does not count towards your three allowed attempts.",
+    "document": "https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Am I allowed to have a sign language interpreter during classes or exams?",
+    "answer": "Yes, assistants including sign language translators can participate in classes or exams, but they must have the consent of the Vice-Rector for Education.",
+    "document": "https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "What is the maximum number of class hours per day for full-time studies?",
+    "answer": "The maximum number of class hours per day is 10 hours",
+    "document": "https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "How much time do I have to justify my absence from compulsory classes?",
+    "answer": "At the latest within 7 days after the reason justifying the absence ceases to exist.",
+    "document": "https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf",
+    "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": " What are the specific dates for the basic and resit examination sessions in the winter semester of the 2024/2025 academic year at AGH University?",
+    "answer": "According to the academic calendar: The basic winter examination session is scheduled from 28 January to 12 February 2025. The resit winter examination session is set for 17 February to 23 February 2025.",
+    "document": "https://www.agh.edu.pl/en/students/academic-year-schedule",
+     "language": "english",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "What is the minimal grade required to pass the course on AGH University?",
+    "answer": "The minimal grade required to pass the course is 3.0",
+    "document": "https://www.agh.edu.pl/home/ckim/dokumenty/regulaminy/EN/2023_10_01_RS_ENG.pdf",
+     "language": "english",
+      "reviewed": ["WN"]
+
+  },
+  {
+    "question": "When does the winter semester of the 2024/2025 academic year begin and end at AGH University?",
+    "answer": "The winter semester begins on 1 October 2024 and ends on 2 March 2025.",
+    "document": "https://www.agh.edu.pl/en/students/academic-year-schedule",
+     "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Where should I submit the scholarship application for the summer semester 2024/2025?",
+    "answer": "Student Service Office - building C-7, room 112b",
+    "document": "https://dss.agh.edu.pl/swiadczenia",
+     "language": "english",
+      "reviewed": ["WN"]
+
+  },
+  {
+    "question": "How many exams will I have on first semester of first-cycle Computer Science starting in 2024?",
+    "answer": "You will have three exams.",
+    "document": "AGH University of Krakow Syllabus Computer Science study program https://sylabusy.agh.edu.pl/en/1/2/15/1/4/16/104#nav-tab-7",
+     "language": "english",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Do I have to be insured as an international student?",
+    "answer": "As an international student, you must have health insurance under the National Health Fund (abbreviation in Polish: NFZ) or travel medical insurance.",
+    "document": "https://www.international.agh.edu.pl/en/useful-information",
+     "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "How many times can I repeat a semester?",
+    "answer": "A semester of studies may be repeated only once at each level of studies or in justified case twice.",
+    "document": "https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf",
+     "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Czego mog\u0119 nauczy\u0107 si\u0119 na kierunku Informatyka i Systemy Inteligentne, Artificial Intelligence and Data Analysis:",
+    "answer": "metod inteligentnej analizy danych (w tym Big Data), akwizycji, reprezentacji i przetwarzania wiedzy, uczenia maszynowego (w tym Deep Learning), zaawansowanych baz danych i baz wiedzy, inteligencji obliczeniowej (ang. Computational Intelligence), system\u00f3w wspomagania decyzji.",
+    "document": "https://sylabusy.agh.edu.pl/public/api/education-program-document/show/24-isi-iii-s-aida-5",
+     "language": "polish",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Are practical placements and diploma projects/theses included in the calculation of a student\u2019s grade point average at AGH University?",
+    "answer": "No, practical placement, diploma project, and diploma thesis are excluded from the calculation of grade point average. Classes not covered by the curriculum and courses taken instead of physical education classes are also excluded",
+    "document": "AGH University of Krakow Study Regulations, \u00a714.5 https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf",
+         "language": "english",
+      "reviewed": ["WN"]
+  },
+
+  {
+    "question": "Jaki tytuł zawodowy nadawany jest absolwentom  ( dla Informatyka i Systemy Inteligentne, Artificial Intelligence and Data Analysis)",
+    "answer": "magister in\u017cynier",
+    "document": "https://sylabusy.agh.edu.pl/public/api/education-program-document/show/24-isi-iii-s-aida-5",
+             "language": "polish",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Who is authorized to grant a student a leave from classes, and for how long can it typically be granted? ",
+    "answer": "The Dean of the Faculty shall grant a student certain types of leave from classes, such as maternity leave, parental leave, health leave, special leave, vocational leave, or a leave without giving a reason. These leaves are typically granted for a period of no longer than one year, although a parental leave can be requested within one year from a child's birth. Prolongation of a leave for the same reason is admissible only with the consent of the Vice-Rector for Education",
+    "document": "https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf",
+         "language": "english",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Can a student appeal a negative grade received for a diploma project or diploma thesis?",
+    "answer": "Yes, a student may appeal against a negative grade of a diploma project or a diploma thesis to the Dean of the Faculty within 14 days from the date of the grade.",
+    "document": "https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf",
+         "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "What is the minimum number of ECTS credits required for graduation from a second-cycle degree program (Master programmes) at AGH University?",
+    "answer": "For the second-cycle degree program (Master programmes), the minimum number of ECTS credits required for graduation is at least 120 or 150 ECTS credits, depending on the duration of the studies. For Master programmes in engineering, it is at least 90, 120, or 150 ECTS credits, also depending on duration.",
+    "document": "https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf",
+         "language": "english",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Where can I learn more about the INTEGRA Student Science Club?",
+    "answer": "You can check the information provided at www.integra.agh.edu.pl or reach out to the coordinators\tDr. Eng. Marek D\u0142ugosz , Dr. Habil. Eng. Pawe\u0142 Skruch, prof. AGH",
+    "document": "https://www.eaiib.agh.edu.pl/organizacje-studenckie-i-kola-naukowe-eaiiib/",
+         "language": "english",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "What are the main requirements for current AGH students applying for the Rector's Scholarship?",
+    "answer": "Current AGH students from year two of first-cycle studies need at least a 4.00 average grade and/or high achievements, plus all course credits",
+    "document": "https://dss.agh.edu.pl/swiadczenia/stypendium-rektora Dzia\u0142 Spraw Studenckich AGH > Stypendium rektora > Informacje og\u00f3lne > pkt 1 > Studenci AGH",
+         "language": "english",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Can a student receive the Rector's Scholarship and the Minister's Scholarship at the same time?",
+    "answer": "Yes, a student is permitted to receive the Rector's Scholarship for the best students and the Minister's Scholarship concurrently",
+    "document": "https://dss.agh.edu.pl/swiadczenia/stypendium-rektora Dzia\u0142 Spraw Studenckich AGH > Stypendium rektora > Informacje og\u00f3lne > Wa\u017cne > pkt 7",
+         "language": "english",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "What are the main criteria for the Fundacja H.T. Zieli\u0144skich Scholarship?",
+    "answer": "Students need to complete at least the 5th semester (unless B2 certified) with an average of at least 4.5, and selection considers results, achievements, and activities",
+    "document": "https://dss.agh.edu.pl/swiadczenia/stypendium-fundacji-ht-zielinskich Dzia\u0142 Spraw Studenckich AGH > Fundacji H.T. Zieli\u0144skich",
+         "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Is there a scholarship for students who just missed the Rector's Scholarship due to the 10% limit with equal points, and what's the deadline?",
+    "answer": "Yes, you can apply for a WFnS scholarship if you met the Rector's criteria but missed out due to the limit with equal points; the deadline is 30 days after collecting the Rector's denial decision",
+    "document": "https://dss.agh.edu.pl/swiadczenia/stypendium-z-wlasnego-funduszu-na-stypendia Dzia\u0142 Spraw Studenckich AGH > Stypendium z W\u0142asnego funduszu na stypendia >         Stypendia dla student\u00f3w > Stypendium z W\u0142asnego funduszu na stypendia w przypadku nieuzyskania stypendium rektora",
+         "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "What scholarships can I apply for at AGH university?",
+    "answer": "At the AGH University, you can apply for:  Rector's scholarship, scholarship for disabled people, social scholarship, aid for the students in need.",
+    "document": "https://www.international.agh.edu.pl/en/scholarships",
+         "language": "english",
+      "reviewed": ["WN"]
+  },
+
+  {
+    "question": "What is the minimum average grade required to apply for the Erasmus+ program?",
+    "answer": "To apply for the Erasmus+ program, students must have a minimum average grade of 3.80. In justified cases, the Dean may allow applications from students with a lower average.",
+    "document": "https://english.zarz.agh.edu.pl/index.php/erasmus/",
+         "language": "english",
+      "reviewed": ["WN"]
+  },
+  {
+    "question": "Are there Polish language courses available for international students at AGH University?",
+    "answer": "Yes, the Department of Foreign Languages offers Polish language courses for international students, including those participating in exchange programmes like Erasmus.",
+    "document": "https://www.sjo.agh.edu.pl/educational-system/polish-language-courses-provided-by-the-department-of-foreign-languages-at-the-agh-university-of-krakow",
+         "language": "english",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Do kogo kierowany jest program stypendialny Fundacji Jerzego Juzonia?",
+    "answer": "Program kierowany jest do kandydat\u00f3w na studia m.in. w AGH, a stypendia Fundacji przyznawane s\u0105 osobom przyj\u0119tym na pierwszy rok studi\u00f3w.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl",
+       "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Gdzie studenci mog\u0105 sk\u0142ada\u0107 wnioski o stypendia lub zapomogi po 1 marca 2025?",
+    "answer": "W budynku C-7, w pokoju 112b.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl",
+             "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie s\u0105 konsekwencje niezapisania si\u0119 na kurs BHP w wyznaczonym terminie?",
+    "answer": "Nie zapisanie si\u0119 studenta na kurs do dnia 01 kwietnia 2025 r. uniemo\u017cliwia dost\u0119p do kursu, a co za tym idzie uniemo\u017cliwia tak\u017ce uko\u0144czenie szkolenia. Szkolenie jest obowi\u0105zkowe, a brak jego uko\u0144czenia mo\u017ce wi\u0105za\u0107 si\u0119 z negatywnymi skutkami w obszarze realizacji prawid\u0142owego przebiegu studi\u00f3w.",
+    "difficulty": "medium",
+    "question_type": "why/how",
+    "source_url": "https://dss.agh.edu.pl",
+     "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Jaka jest wysoko\u015b\u0107 stypendium Fundacji Jerzego Juzonia w roku akademickim 2025/2026?",
+    "answer": "W roku akademickim 2025/2026 ka\u017cde stypendium Fundacji Jerzego Juzonia wyniesie 6000 z\u0142otych \u0142\u0105cznie.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/",
+     "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Od kiedy Biuro Obs\u0142ugi Spraw Studenckich (BOSS) przejmuje obs\u0142ug\u0119 \u015bwiadcze\u0144 dla student\u00f3w wszystkich Wydzia\u0142\u00f3w AGH i gdzie mo\u017cna sk\u0142ada\u0107 wnioski?",
+    "answer": "Od 1 marca 2025 r. Biuro Obs\u0142ugi Spraw Studenckich (BOSS) przejmuje obs\u0142ug\u0119 \u015bwiadcze\u0144 dla student\u00f3w wszystkich Wydzia\u0142\u00f3w AGH. Wniosek o stypendium lub zapomog\u0119 b\u0119dzie mo\u017cna z\u0142o\u017cy\u0107 w budynku C-7, w pokoju 112b.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/",
+     "language": "polish",
+      "reviewed": ["WN"]
+  }
+]

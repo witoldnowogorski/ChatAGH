@@ -25,7 +25,7 @@ class SearchNode(BaseNode):
         query = state["search_query"]
         retrieved_chunks = self.vector_store.search(query, k=self.initial_retrieved_chunks)
 
-        aggregated_docs = self.aggregate_by_document(retrieved_chunks)
+        aggregated_docs = self.aggregate_by_url(retrieved_chunks)
 
         logger.info(
             "Retrieved {} documents, source urls: {}".format(len(retrieved_chunks), aggregated_docs.keys())
@@ -38,7 +38,7 @@ class SearchNode(BaseNode):
         return state
 
     @staticmethod
-    def aggregate_by_document(retrieved_chunks):
+    def aggregate_by_url(retrieved_chunks):
         """Group retrieved chunks by source url's"""
         urls = {}
         for doc in retrieved_chunks:

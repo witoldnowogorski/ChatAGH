@@ -27,13 +27,13 @@ class GraphAugmentationNode:
 
         context = []
         for url, summary in analyzed_context.items():
-            context.append(self.process_single_url(url, summary))
+            context.append(self.process_single_url(url, summary, state))
 
         state["processed_retrieved_context"] = "\n\n\n".join(context)
 
         return state
 
-    def process_single_url(self, url, summary) -> str:
+    def process_single_url(self, url, summary, state) -> str:
         related_urls = self.find_related_urls(url)
 
         logger.info("Found {} related URLs for {}".format(len(related_urls), url))
@@ -53,6 +53,12 @@ class GraphAugmentationNode:
                 bm25_weight=0,
                 top_n=self.num_related_chunks_for_doc,
             )
+            for chunk in top_related_chunks:
+                url = chunk["chunk"]["metadata"]["url"]
+                if url in state["retrieved_chunks"].keys():
+                    state["retrieved_chunks"][url].append(chunk["chunk"])
+                else:
+                    state["retrieved_chunks"][url] = [chunk["chunk"]]
 
             source_document = DOC_TEMPLATE.format(url, summary)
 
