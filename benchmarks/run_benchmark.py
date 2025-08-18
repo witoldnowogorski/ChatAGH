@@ -31,18 +31,19 @@ def read_benchmark(sample_size: int | None = None):
 
 
 def evaluate_response(question, answer, context, ground_truth):
+    dataset = Dataset.from_dict({
+        "user_input": [question],
+        "response": [answer],
+        "retrieved_contexts": [context],
+        "reference": [ground_truth],
+    })
     result = evaluate(
-        dataset=Dataset.from_dict({
-            "question": question,
-            "answer": answer,
-            "contexts": context,
-            "ground_truth": ground_truth,
-        }),
+        dataset=dataset,
         metrics=[
             faithfulness,
             answer_relevancy,
         ],
-        llm=ChatGoogleGenerativeAI(model="gemini-2.0-flash-001", api_key=random.choice(api_keys)),
+        llm=ChatGoogleGenerativeAI(model="gemini-2.0-flash-lite", api_key=random.choice(api_keys)),
         embeddings=HuggingFaceEmbeddings(model_name="intfloat/multilingual-e5-large")
     )
     return result.to_pandas()
@@ -56,7 +57,7 @@ if __name__ == "__main__":
 
     ff_scores = []
     ac_scores = []
-    result_df = pd.DataFrame(columns=["question", "answer", "contexts", "ground_truth"])
+    result_df = pd.DataFrame(columns=["user_input", "response", "retrieved_contexts", "reference"])
     for b in benchmark:
         question = b["question"]
         print("\n Question: {}".format(question))
