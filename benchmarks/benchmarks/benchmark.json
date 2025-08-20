@@ -552,5 +552,361 @@
     "source_url": "https://dss.agh.edu.pl/",
      "language": "polish",
       "reviewed": ["WN"]
+  },
+    {
+    "question": "Gdzie mo\u017cna szuka\u0107 informacji na temat stypendi\u00f3w i wsparcia finansowego dla student\u00f3w AGH?",
+    "answer": "Informacje na temat stypendi\u00f3w i wsparcia finansowego dla student\u00f3w AGH mo\u017cna znale\u017a\u0107 w Biurze Obs\u0142ugi Spraw Studenckich (BOSS) oraz na stronie po\u015bwi\u0119conej wsparciu finansowemu dla student\u00f3w AGH.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/en/student-affairs-department",
+     "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie dokumenty nale\u017cy z\u0142o\u017cy\u0107, je\u015bli rodzic wnioskodawcy jest bezrobotny i zarejestrowany w Urz\u0119dzie Pracy?",
+    "answer": "Nale\u017cy z\u0142o\u017cy\u0107 za\u015bwiadczenie z Urz\u0119du Pracy o posiadaniu statusu osoby bezrobotnej wraz z informacj\u0105 o wysoko\u015bci pobranego zasi\u0142ku/stypendium za pierwszy pe\u0142ny miesi\u0105c pobierania \u015bwiadczenia.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/swiadczenia/stypendium-socjalne",
+     "language": "polish",
+      "reviewed": ["WN"]
+  },
+    {
+    "question": "W jakich sytuacjach student ubiegaj\u0105cy si\u0119 o stypendium socjalne musi z\u0142o\u017cy\u0107 o\u015bwiadczenie o nieprowadzeniu wsp\u00f3lnego gospodarstwa domowego z \u017cadnym z rodzic\u00f3w?",
+    "answer": "Student sk\u0142ada takie o\u015bwiadczenie, je\u017celi nie wykazuje dochod\u00f3w rodzic\u00f3w i uko\u0144czy\u0142 26. rok \u017cycia, pozostaje w zwi\u0105zku ma\u0142\u017ce\u0144skim, ma na swoim utrzymaniu dzieci lub osi\u0105ga\u0142 w 2024 r. i nadal doch\u00f3d nie mniej ni\u017c 1696,80 z\u0142 miesi\u0119cznie i nie prowadzi gospodarstwa z rodzicami.",
+    "difficulty": "hard",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/swiadczenia/stypendium-socjalne",
+     "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie dokumenty nale\u017cy z\u0142o\u017cy\u0107, je\u015bli wnioskodawca ubiega si\u0119 o stypendium socjalne w zwi\u0119kszonej wysoko\u015bci z tytu\u0142u ci\u0119\u017ckiej choroby rodzica?",
+    "answer": "Nale\u017cy z\u0142o\u017cy\u0107 dokument potwierdzaj\u0105cy ci\u0119\u017ck\u0105 lub przewlek\u0142\u0105 chorob\u0119 cz\u0142onka rodziny studenta wraz z informacj\u0105 o przetwarzaniu danych osobowych (Za\u0142\u0105cznik nr 4 do Regulaminu \u015bwiadcze\u0144 dla student\u00f3w AGH).",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/swiadczenia/stypendium-socjalne",
+     "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Jak ubiega\u0107 si\u0119 o stypendium dla os\u00f3b niepe\u0142nosprawnych?",
+    "answer": "Wniosek nale\u017cy wype\u0142ni\u0107 w systemie USOSweb, a nast\u0119pnie wydrukowa\u0107, podpisa\u0107 i wraz z dokumentem stwierdzaj\u0105cym niepe\u0142nosprawno\u015b\u0107, z\u0142o\u017cy\u0107 w BOSS.",
+    "difficulty": "medium",
+    "question_type": "how/why",
+    "source_url": "https://dss.agh.edu.pl/swiadczenia/stypendium-dla-osob-niepelnosprawnych",
+      "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie kwoty stypendium przys\u0142uguj\u0105 w zale\u017cno\u015bci od stopnia niepe\u0142nosprawno\u015bci w roku akademickim 2024/2025?",
+    "answer": "Wysoko\u015b\u0107 stypendium dla os\u00f3b niepe\u0142nosprawnych jest zale\u017cna od stopnia niepe\u0142nosprawno\u015bci i w roku akademickim 2024/2025 wynosi: 1 200 z\u0142/m-c dla os\u00f3b ze znacznym stopniem niepe\u0142nosprawno\u015bci, 1 000 z\u0142/m-c dla os\u00f3b z umiarkowanym stopniem niepe\u0142nosprawno\u015bci, 800 z\u0142/m-c dla os\u00f3b z lekkim stopniem niepe\u0142nosprawno\u015bci.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/swiadczenia/stypendium-dla-osob-niepelnosprawnych",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+
+  {
+    "question": "Jakie dokumenty nale\u017cy do\u0142\u0105czy\u0107 do wniosku o zapomog\u0119 w przypadku \u015bmierci cz\u0142onka rodziny?",
+    "answer": "W przypadku \u015bmierci cz\u0142onka rodziny, do wniosku o zapomog\u0119 nale\u017cy do\u0142\u0105czy\u0107 akt zgonu oraz pisemne uzasadnienie pogorszenia si\u0119 sytuacji materialnej studenta w wyniku \u015bmierci bliskiego cz\u0142onka rodziny.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/swiadczenia/zapomoga",
+      "language": "polish",
+    "reviewed": ["WN"]
+  },
+  {
+    "question": "Jakie warunki musi spe\u0142ni\u0107 student AGH co najmniej II roku studi\u00f3w I stopnia, aby otrzyma\u0107 stypendium rektora dla najlepszych student\u00f3w?",
+    "answer": "Student AGH co najmniej II roku studi\u00f3w I stopnia musi w minionym roku akademickim uzyska\u0107 \u015bredni\u0105 ocen co najmniej 4,00 i/lub posiada\u0107 osi\u0105gni\u0119cia naukowe i/lub posiada\u0107 osi\u0105gni\u0119cia artystyczne i/lub osi\u0105gn\u0105\u0107 wysokie wyniki sportowe we wsp\u00f3\u0142zawodnictwie mi\u0119dzynarodowym lub krajowym oraz posiada\u0107 wszystkie zaliczenia i egzaminy z przedmiot\u00f3w obj\u0119tych programem studi\u00f3w.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/swiadczenia/stypendium-rektora",
+          "language": "polish",
+    "reviewed": ["WN"]
+  },
+
+  {
+    "question": "Jakie warunki musi spe\u0142nia\u0107 student, aby otrzyma\u0107 stypendium ministra?",
+    "answer": "Stypendium ministra mo\u017ce otrzyma\u0107 student wykazuj\u0105cy si\u0119 znacz\u0105cymi osi\u0105gni\u0119ciami naukowymi lub artystycznymi zwi\u0105zanymi ze studiami, lub znacz\u0105cymi osi\u0105gni\u0119ciami sportowymi.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/swiadczenia/stypendium-ministra",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie publikacje nie s\u0105 uznawane za znacz\u0105ce osi\u0105gni\u0119cia naukowe przy ubieganiu si\u0119 o stypendium ministra?",
+    "answer": "Publikacje w wydawnictwach spoza wykazu wydawnictw sporz\u0105dzonym zgodnie z przepisami wydanymi na podstawie art. 267 ust. 2 pkt 2 ustawy \u2013 Prawo o szkolnictwie wy\u017cszym i nauce nie stanowi\u0105 znacz\u0105cych osi\u0105gni\u0119\u0107 i nie mog\u0105 by\u0107 wykazywane we wniosku. Publikacje w czasopismach lub w materia\u0142ach z konferencji spoza wykazu r\u00f3wnie\u017c nie s\u0105 uznawane.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/swiadczenia/stypendium-ministra",
+          "language": "polish",
+    "reviewed": ["WN"]
+  },
+
+  {
+    "question": "Gdzie nale\u017cy z\u0142o\u017cy\u0107 wniosek o przyznanie stypendium z W\u0142asnego Funduszu na stypendia?",
+    "answer": "Wniosek o przyznanie stypendium nale\u017cy z\u0142o\u017cy\u0107 w terminie podanym na stronie WFnS, w Biurze Obs\u0142ugi Spraw Studenckich (budynek C-5 pok. 008) lub do skrzynki BOSS, kt\u00f3ra znajduje si\u0119 przed pokojem 112b w budynku C-7.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/swiadczenia/stypendium-z-wlasnego-funduszu-na-stypendia",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Jaki jest termin sk\u0142adania wniosk\u00f3w o stypendium dla student\u00f3w i doktorant\u00f3w w roku 2025?",
+    "answer": "Zar\u00f3wno dla student\u00f3w, jak i doktorant\u00f3w termin sk\u0142adania wniosk\u00f3w o stypendium up\u0142ywa 12 wrze\u015bnia 2025 r.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/swiadczenia/stypendium-z-wlasnego-funduszu-na-stypendia",
+          "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Kt\u00f3rzy studenci mog\u0105 ubiega\u0107 si\u0119 o stypendium ArcelorMittal Poland S.A. w roku akademickim 2024/2025?",
+    "answer": "O stypendium ArcelorMittal Poland S.A. w roku akademickim 2024/2025 mog\u0105 si\u0119 stara\u0107 studenci pierwszego i drugiego semestru studi\u00f3w drugiego stopnia na kierunkach: In\u017cynieria Metali (WIMiIP), Metalurgia (WIMiIP), Elektrotechnika (WEAIiIB), Automatyka i Robotyka (WEAIiIB), Mechanika i Budowa Maszyn (WIMiR), Automatyka Przemys\u0142owa i Robotyka (WIMiR), In\u017cynieria Mechaniczna i Materia\u0142owa (WIMiR), Energetyka (WEiP), Energetyka Odnawialna i Zarz\u0105dzanie Energi\u0105 (WEiP), Nowoczesne Technologie Paliwowe (WEiP).",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/swiadczenia/stypendium-arcelormittal-poland",
+                "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Gdzie nale\u017cy przekaza\u0107 podpisane jednostronnie umowy stypendialne?",
+    "answer": "Podpisane jednostronnie umowy przekazywane s\u0105 do Centrum Obs\u0142ugi Projekt\u00f3w (Sekretariat C2, pok. 105).",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/swiadczenia/wyplaty-swiadczen-dla-studentow",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+  {
+    "question": "Kt\u00f3re ko\u0142o naukowe zajmuje si\u0119 tematyk\u0105 Circular Economy?",
+    "answer": "Ko\u0142o naukowe AGH Circular Economy Efficiency Multiplied zajmuje si\u0119 tematyk\u0105 Circular Economy.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/organizacje-studenckie/kola-naukowe-obszaru-zielonego",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Jaki wydzia\u0142 jest powi\u0105zany z ko\u0142em naukowym AGH Drone Engineering?",
+    "answer": "Ko\u0142o naukowe AGH Drone Engineering jest powi\u0105zane z Wydzia\u0142em In\u017cynierii Mechanicznej i Robotyki (WIMiR).",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/organizacje-studenckie/kola-naukowe-obszaru-zielonego",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Podaj adres e-mail do ko\u0142a naukowego Geolog\u00f3w.",
+    "answer": "Adres e-mail do ko\u0142a naukowego Geolog\u00f3w to skng@student.agh.edu.pl.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/organizacje-studenckie/kola-naukowe-obszaru-zielonego",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Kt\u00f3re ko\u0142a naukowe maj\u0105 opiekun\u00f3w z Wydzia\u0142u Zarz\u0105dzania (WZ)?",
+    "answer": "Nast\u0119puj\u0105ce ko\u0142a naukowe maj\u0105 opiekun\u00f3w z Wydzia\u0142u Zarz\u0105dzania: Audytor, B2B Bridge To Business, Ekonometryk, Ekonomii, KN @Trend, Menad\u017cer Jako\u015bci, Mened\u017cer Produkcji, Mentor, Promote.Me, Transpeed oraz uKOD.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/organizacje-studenckie/kola-naukowe-obszaru-zielonego",
+          "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Jak mog\u0119 skontaktowa\u0107 si\u0119 z ko\u0142em naukowym Tryton?",
+    "answer": "Z ko\u0142em naukowym Tryton mo\u017cna si\u0119 skontaktowa\u0107 poprzez adres e-mail: kn.tryton@agh.edu.pl.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/organizacje-studenckie/kola-naukowe-obszaru-zielonego",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+  {
+    "question": "Jakie ko\u0142o naukowe zajmuje si\u0119 tematyk\u0105 Internetu Rzeczy (IoT)?",
+    "answer": "Ko\u0142o naukowe AIoTA (Academic Internet of Things Association) zajmuje si\u0119 tematyk\u0105 Internetu Rzeczy.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/organizacje-studenckie/kola-naukowe-obszaru-czarnego",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+  {
+    "question": "Jakie dokumenty nale\u017cy z\u0142o\u017cy\u0107 w Dziale Spraw Studenckich, aby ubiega\u0107 si\u0119 o dofinansowanie?",
+    "answer": "Nale\u017cy przynie\u015b\u0107 do Dzia\u0142u Spraw Studenckich preliminarz, opis wydarzenia oraz list\u0119 uczestnik\u00f3w (student\u00f3w) bior\u0105cych udzia\u0142 w realizacji projektu.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/organizacje-studenckie/ubieganie-sie-o-dofinansowanie",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+
+  {
+    "question": "Do kiedy Ko\u0142a Naukowe AGH mog\u0105 sk\u0142ada\u0107 wnioski o wsparcie firmy ArcelorMittal Poland w ramach konkursu 'Rozkr\u0119\u0107 Ko\u0142o z ArcelorMittal Poland 2025'?",
+    "answer": "Nieprzekraczalny termin sk\u0142adania wniosk\u00f3w z opisem projekt\u00f3w K\u00f3\u0142 Naukowych AGH to 13 czerwca 2025 r.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/organizacje-studenckie/konkursy-dla-kol-naukowych/granty-arcelormittal-poland",
+        "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Do jakich zam\u00f3wie\u0144 publicznych stosuje si\u0119 przepisy Regulaminu Udzielania Zam\u00f3wie\u0144 Publicznych AGH?",
+    "answer": "Przepisy Regulaminu stosuje si\u0119 do udzielania przez Akademi\u0119 G\u00f3rniczo-Hutnicz\u0105 zam\u00f3wie\u0144 publicznych na dostawy, us\u0142ugi i roboty budowlane, kt\u00f3re s\u0105 finansowane w ca\u0142o\u015bci lub cz\u0119\u015bci ze \u015brodk\u00f3w znajduj\u0105cych si\u0119 w dyspozycji Uczelni bez wzgl\u0119du na \u017ar\u00f3d\u0142o ich pochodzenia.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/organizacje-studenckie/przyjazne-procedury-dzp",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Gdzie nale\u017cy z\u0142o\u017cy\u0107 wniosek o podr\u00f3\u017c s\u0142u\u017cbow\u0105 za granic\u0119 po uzyskaniu podpisu Prorektora ds. Studenckich?",
+    "answer": "Wnioski wraz z za\u0142\u0105cznikami nale\u017cy dostarczy\u0107 do Dzia\u0142u Wsp\u00f3\u0142pracy z Zagranic\u0105 AGH \u2013 Pawilon C1, pok. 108-109 najp\u00f3\u017aniej na 7 dni roboczych przed planowanym terminem wyjazdu.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/organizacje-studenckie/przyjazne-procedury-csm",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie warunki musi spe\u0142ni\u0107 student lub doktorant, aby m\u00f3c ubiega\u0107 si\u0119 o kredyt studencki?",
+    "answer": "Student nie mo\u017ce mie\u0107 uko\u0144czonych 30 lat, a doktorant 35 lat.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/kredyty-studenckie",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+
+  {
+    "question": "Gdzie mo\u017cna sk\u0142ada\u0107 wnioski o kredyt studencki i w jakiej formie?",
+    "answer": "Wnioski o udzielenie kredytu mo\u017cna sk\u0142ada\u0107 w formie papierowej lub za po\u015brednictwem systemu teleinformatycznego w PKO Bank Polski S.A., Bank PEKAO S.A., Bank Polskiej Sp\u00f3\u0142dzielczo\u015bci S.A. (wraz ze zrzeszonymi bankami sp\u00f3\u0142dzielczymi) oraz SGB-Bank S.A. (wraz ze zrzeszonymi bankami sp\u00f3\u0142dzielczymi).",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/kredyty-studenckie",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie kary dyscyplinarne mog\u0105 by\u0107 na\u0142o\u017cone na studenta?",
+    "answer": "Karami dyscyplinarnymi s\u0105: upomnienie, nagana, nagana z ostrze\u017ceniem, zawieszenie w okre\u015blonych prawach studenta na okres do 1 roku oraz wydalenie z uczelni.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/sprawy-dyscyplinarne",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "W jakich sytuacjach uczelnia zg\u0142asza studenta do ubezpieczenia zdrowotnego?",
+    "answer": "Uczelnia zg\u0142asza do ubezpieczenia zdrowotnego studenta, kt\u00f3ry uko\u0144czy\u0142 26 lat i nie podlega obowi\u0105zkowi ubezpieczenia zdrowotnego z innego tytu\u0142u, lub nie uko\u0144czy\u0142 26 lat i nie podlega obowi\u0105zkowi ubezpieczenia zdrowotnego z innego tytu\u0142u.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/ubezpieczenia",
+          "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "W jakie udogodnienia wyposa\u017cone s\u0105 windy w budynku G\u0142\u00f3wnym AGH?",
+    "answer": "Windy wyposa\u017cone s\u0105 w komunikaty g\u0142osowe oraz etykiety w alfabecie Braille\u2019a.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/deklaracja-dostepnosci-1",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Na podstawie jakiego zarz\u0105dzenia Rektora AGH wprowadzono Regulamin \u015bwiadcze\u0144 dla student\u00f3w AGH?",
+    "answer": "Regulamin \u015bwiadcze\u0144 dla student\u00f3w AGH wprowadzono zarz\u0105dzeniem Nr 59/2022 Rektora AGH z dnia 28 wrze\u015bnia 2022 r.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/swiadczenia/archiwum-dokumentow",
+          "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "O czym informuje komunikat prorektora z dnia 12.05.2023?",
+    "answer": "Komunikat Prorektora ds. Studenckich z dnia 12.05.2023 r. informuje w sprawie wyd\u0142u\u017cenia okresu wyp\u0142aty stypendi\u00f3w z Funduszu stypendialnego (10. rata stypendium) w roku akademickim 2022/2023.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/swiadczenia/archiwum-dokumentow",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Czy student, kt\u00f3ry ma deficyt punkt\u00f3w ECTS mo\u017ce otrzyma\u0107 stypendium rektora?",
+    "answer": "Student, kt\u00f3ry ma deficyt punkt\u00f3w ECTS nie mo\u017ce otrzyma\u0107 stypendium rektora.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/en/student-affairs-department/financial-support-for-agh-students/rectors-scholarship",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Czy student, kt\u00f3ry studiuje wi\u0119cej ni\u017c jeden kierunek studi\u00f3w mo\u017ce otrzyma\u0107 stypendium rektora na ka\u017cdym z nich?",
+    "answer": "Je\u015bli student studiuje wi\u0119cej ni\u017c jeden kierunek studi\u00f3w i ma \u015bredni\u0105 ocen odpowiedni\u0105 do otrzymania stypendium rektora dla najlepszych student\u00f3w na wi\u0119cej ni\u017c jednym kierunku studi\u00f3w, stypendium to mo\u017ce otrzyma\u0107 tylko na jednym z nich, wskazanym przez studenta.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/en/student-affairs-department/financial-support-for-agh-students/rectors-scholarship",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Ile razy w roku akademickim student mo\u017ce otrzyma\u0107 zapomog\u0119?",
+    "answer": "Student mo\u017ce otrzyma\u0107 zapomog\u0119 nie wi\u0119cej ni\u017c 2 razy w roku akademickim, tylko na jednym kierunku studi\u00f3w. Nie mo\u017cna ubiega\u0107 si\u0119 o zapomog\u0119 dwa razy z tego samego powodu. Wniosek o zapomog\u0119 nale\u017cy z\u0142o\u017cy\u0107 nie p\u00f3\u017aniej ni\u017c 90 dni po wyst\u0105pieniu przyczyny wskazanej we wniosku.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/en/student-affairs-department/financial-support-for-agh-students/allowance-one-time-aid",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie elementy zawiera protok\u00f3\u0142 egzaminu dyplomowego?",
+    "answer": "Protok\u00f3\u0142 egzaminu dyplomowego zawiera dat\u0119 egzaminu, imiona i nazwisko studenta, numer albumu, imiona i nazwiska, podpisy oraz tytu\u0142 profesora, stopnie naukowe lub stopnie w zakresie sztuki lub tytu\u0142y zawodowe cz\u0142onk\u00f3w komisji egzaminacyjnej, tre\u015b\u0107 zadanych pyta\u0144 i uzyskane oceny, \u015brednia ocen uzyskana w okresie studi\u00f3w, tytu\u0142 i ocen\u0119 pracy dyplomowej, ocen\u0119 egzaminu dyplomowego, ostateczny wynik studi\u00f3w oraz uzyskany tytu\u0142 zawodowy.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/home/dss/rozporzadzenie_mnisw_studia.pdf",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie organy kolegialne dzia\u0142aj\u0105 w Akademii G\u00f3rniczo-Hutniczej?",
+    "answer": "Organami kolegialnymi Uczelni s\u0105: Rada Uczelni, Senat oraz rady dyscyplin naukowych.",
+    "difficulty": "easy",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/home/dss/Statut_AGH_z_poprawkami_z_27_09_2023.pdf",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie formy studi\u00f3w wy\u017cszych s\u0105 prowadzone w AGH?",
+    "answer": "Studia w AGH prowadzone s\u0105 w formie stacjonarnej lub niestacjonarnej jako studia pierwszego stopnia (in\u017cynierskie lub licencjackie) oraz studia drugiego stopnia (magisterskie in\u017cynierskie lub magisterskie).",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/home/dss/Regulamin_studiow_2023.pdf",
+          "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie s\u0105 konsekwencje stwierdzenia niesamodzielno\u015bci pracy studenta podczas zaliczenia?",
+    "answer": "Je\u017celi prowadz\u0105cy zaj\u0119cia stwierdzi niesamodzielno\u015b\u0107 pracy studenta, w szczeg\u00f3lno\u015bci w zakresie korzystania przez niego z niedozwolonych materia\u0142\u00f3w, urz\u0105dze\u0144, metod lub \u015brodk\u00f3w, student otrzymuje ocen\u0119 niedostateczn\u0105 z tego zaliczenia i traci prawo do poprawkowego zaliczenia, co skutkuje niezaliczeniem ca\u0142ego przedmiotu i odnotowaniem w systemie USOS przy u\u017cyciu zapisu nie zaliczono (,,nzal.\u201d).",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://dss.agh.edu.pl/home/dss/Regulamin_studiow_2023.pdf",
+    "language": "polish",
+    "reviewed": ["WN"]
+  },
+    {
+    "question": "Jakie kwalifikacje zawodowe uzyskuje technik budownictwa kolejowego w formule 2019?",
+    "answer": "Technik budownictwa kolejowego uzyskuje kwalifikacje TKO.03 - Organizacja rob\u00f3t zwi\u0105zanych z budow\u0105 i utrzymaniem dr\u00f3g kolejowych oraz TKO.04 - Organizacja rob\u00f3t zwi\u0105zanych z budow\u0105 i utrzymaniem kolejowych obiekt\u00f3w in\u017cynieryjnych oraz podstawy kosztorysowania.",
+    "difficulty": "medium",
+    "question_type": "factual",
+    "source_url": "https://rekrutacja.agh.edu.pl/wp-content/uploads/2025/06/Tabela_3_uchwala-nr-69_2024-zm_64_2025-ws_rekrutacji_2025_26x.pdf",
+    "language": "polish",
+    "reviewed": ["WN"]
   }
 ]

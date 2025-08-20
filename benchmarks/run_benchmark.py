@@ -52,31 +52,34 @@ def evaluate_response(question, answer, context, ground_truth):
 if __name__ == "__main__":
     load_dotenv("/Users/wnowogorski/PycharmProjects/CHAT_AGH/.env")
 
-    benchmark = read_benchmark(sample_size=1)
+    benchmark = read_benchmark(sample_size=50)
     print("Number of questions: {}".format(len(benchmark)))
 
     ff_scores = []
     ac_scores = []
     result_df = pd.DataFrame(columns=["user_input", "response", "retrieved_contexts", "reference"])
     for b in benchmark:
-        question = b["question"]
-        print("\n Question: {}".format(question))
-        correct_answer = b["answer"]
+        try:
+            question = b["question"]
+            print("\n Question: {}".format(question))
+            correct_answer = b["answer"]
 
-        graph = ChatGraph()
-        response = graph.invoke(question)
-        answer = response["chat_history"][-1].content
-        retrieved_chunks_dict = response["retrieved_chunks"] or {}
-        retrieved_chunks = []
-        for url in retrieved_chunks_dict.keys():
-            retrieved_chunks.extend([c.get("text") for c in retrieved_chunks_dict[url]])
-        print("Number of retrieved chunks: {}".format(len(retrieved_chunks)))
-        print("Answer: {}".format(answer))
-        print("Correct Answer: {}".format(correct_answer))
+            graph = ChatGraph()
+            response = graph.invoke(question)
+            answer = response["chat_history"][-1].content
+            retrieved_chunks_dict = response["retrieved_chunks"] or {}
+            retrieved_chunks = []
+            for url in retrieved_chunks_dict.keys():
+                retrieved_chunks.extend([c.get("text") for c in retrieved_chunks_dict[url]])
+            print("Number of retrieved chunks: {}".format(len(retrieved_chunks)))
+            print("Answer: {}".format(answer))
+            print("Correct Answer: {}".format(correct_answer))
 
-        api_keys = json.loads(os.getenv("GEMINI_API_KEYS", "[]"))
+            api_keys = json.loads(os.getenv("GEMINI_API_KEYS", "[]"))
 
-        df = evaluate_response(question, answer, retrieved_chunks, correct_answer)
-        result_df = pd.concat([result_df, df], ignore_index=True)
-
-    result_df.to_json("benchmark_results.json")
+            df = evaluate_response(question, answer, retrieved_chunks, correct_answer)
+            result_df = pd.concat([result_df, df], ignore_index=True)
+            result_df.to_json("benchmark_results.json")
+        except Exception as e:
+            print(e)
+            continue

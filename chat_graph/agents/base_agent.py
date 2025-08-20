@@ -14,7 +14,7 @@ class BaseAgent:
     def __init__(
         self,
         prompt_template: str,
-        model_name: str = "gemini-2.0-flash-001",
+        model_name: str = "gemini-2.0-flash",
         **kwargs
     ):
         self.prompt_template: str = prompt_template
