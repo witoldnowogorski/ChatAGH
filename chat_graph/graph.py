@@ -13,6 +13,7 @@ from chat_graph.nodes import (
     GraphAugmentationNode,
 )
 from chat_graph.states import ChatState
+from chat_graph.utils import mongo_client
 
 
 class ChatGraph:
@@ -34,16 +35,17 @@ class ChatGraph:
     """
     def __init__(self, **kwargs):
         self.workflow = StateGraph(ChatState)
-
         self.workflow.add_node("search_decision", RAGDecisionNode())
         self.workflow.add_node("answer_generation", AnswerGenerationNode())
         self.workflow.add_node("query_generation", QueryGenerationNode())
         self.workflow.add_node("search", SearchNode(
+            mongo_client=mongo_client,
             initial_retrieved_chunks=kwargs.get("initial_retrieved_chunks", 5),
             window_size=kwargs.get("window_size", 1)
         ))
         self.workflow.add_node("docs_analyzer", DocsAnalyzerNode())
         self.workflow.add_node("graph_augmentation", GraphAugmentationNode(
+            mongo_client=mongo_client,
             num_related_chunks_for_doc=kwargs.get("num_augmentation_chunks", 3)
         ))
 
@@ -61,7 +63,7 @@ class ChatGraph:
         self.graph = self.workflow.compile()
 
         self.state = ChatState(
-            chat_history=[],
+            chat_history=kwargs.get("chat_history", []),
             processed_retrieved_context=None,
             rag_decision=False,
             search_query=None,

@@ -3,21 +3,19 @@ from pymongo import MongoClient
 
 from typing import List, Dict
 from sklearn.metrics.pairwise import cosine_similarity
-from sentence_transformers import SentenceTransformer
 from datastores.vector_store.utils import bm25_similarity
 import numpy as np
 
 from chat_graph.states import ChatState
-from chat_graph.utils import logger
+from chat_graph.utils import logger, embedding_model
 
 
 DOC_TEMPLATE = " -> Document (url: {}): \n{}\n\n"
 
 class GraphAugmentationNode:
-    def __init__(self, num_related_chunks_for_doc: int = 10):
-        uri = os.environ.get("MONGODB_URI")
-        self.client = MongoClient(uri, tlsAllowInvalidCertificates=True)
-        self.embedding_model = SentenceTransformer("intfloat/multilingual-e5-large")
+    def __init__(self, mongo_client: MongoClient, num_related_chunks_for_doc: int = 10):
+        self.client = mongo_client
+        self.embedding_model = embedding_model
         self.num_related_chunks_for_doc = num_related_chunks_for_doc
 
     def __call__(self, state: ChatState) -> ChatState:

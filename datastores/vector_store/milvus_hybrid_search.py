@@ -2,7 +2,6 @@ import os
 from typing import List
 
 from langchain_core.documents import Document
-from sentence_transformers import SentenceTransformer
 from pymilvus import (
     MilvusClient,
     utility,
@@ -13,7 +12,8 @@ from pymilvus import (
     FunctionType,
     connections
 )
-import torch
+
+from chat_graph.utils import embedding_model
 
 
 class MilvusHybridSearch:
@@ -27,10 +27,7 @@ class MilvusHybridSearch:
         )
         self.collection_name = collection_name
         self.client = MilvusClient(uri=uri, token=token)
-        if torch.cuda.is_available():
-            self.dense_embedding_model = SentenceTransformer("intfloat/multilingual-e5-large", device="cuda")
-        else:
-            self.dense_embedding_model = SentenceTransformer("intfloat/multilingual-e5-large")
+        self.dense_embedding_model = embedding_model
 
         if not utility.has_collection(self.collection_name):
             self._create_collection()

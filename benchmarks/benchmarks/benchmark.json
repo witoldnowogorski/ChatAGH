@@ -246,13 +246,6 @@
       "reviewed": ["WN"]
   },
   {
-    "question": "How many programmes were there at the AGH University in 2023/2024?",
-    "answer": "There were 81 degree programmes in the academic year 2023/2024.",
-    "document": "https://www.agh.edu.pl/en/o-agh/fakty-i-liczby",
-    "language": "english",
-      "reviewed": ["WN"]
-  },
-  {
     "question": "When does the academic 2024 year end?",
     "answer": "The academic year shall begin on 30th of September",
     "document": "https://www.cok.agh.edu.pl/home/cok/Regulamin_studiow_AGH/2023_10_01_RS_ENG.pdf",
