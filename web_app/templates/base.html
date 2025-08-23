@@ -129,12 +129,15 @@
             {% if user.is_authenticated %}
             <div class="navbar-actions">
                 <span style="color: #c7c5c5">Welcome, {{ user.username }}</span>
-                <a href="{% url 'accounts:logout' %}" class="btn btn-warning ">Logout</a>
+                <form action="{% url 'accounts:logout' %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn" type="submit">Logout</button>
+                </form>
             </div>
             {% else %}
             <div class="navbar-actions">
                 <a href="{% url 'accounts:login' %}" class="btn">Login</a>
-                <a href="{% url 'accounts:register' %}" class="btn btn-secondary">Register</a>
+                <a href="{% url 'accounts:register' %}" class="btn", style="background-color: rgb(0, 80, 0)">Register</a>
             </div>
             {% endif %}
         </div>

@@ -7,10 +7,11 @@
     .auth-container {
         max-width: 400px;
         margin: 2rem auto;
-        background: white;
+        background: rgba(0, 0, 0, 0.8);
         padding: 2rem;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding-top: 50px;
     }
 
     .auth-header {
@@ -19,7 +20,7 @@
     }
 
     .auth-header h2 {
-        color: #333;
+        color: white
         font-weight: 500;
     }
 
@@ -31,22 +32,25 @@
         display: block;
         margin-bottom: 0.5rem;
         font-weight: 500;
-        color: #555;
+        color: white;
     }
 
     .form-group input {
         width: 100%;
         padding: 0.75rem;
-        border: 1px solid #ddd;
+        color: white;
+        border: 1px solid rgb(0, 80, 0);
         border-radius: 4px;
         font-size: 1rem;
         transition: border-color 0.2s;
+        background-color: rgba(0, 0, 0, 0.7)
     }
 
     .form-group input:focus {
         outline: none;
         border-color: #007bff;
         box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+        background-color: rgba(0, 0, 0, 0.8)
     }
 
     .form-actions {
@@ -102,7 +106,7 @@
 {% block content %}
 <div class="auth-container">
     <div class="auth-header">
-        <h2>Sign In</h2>
+        <h2 style="color: white">Sign In</h2>
     </div>
 
     <form method="post">
@@ -139,12 +143,12 @@
         </div>
 
         <div class="form-actions">
-            <button type="submit" class="btn-primary">Sign In</button>
+            <button type="submit" class="btn-primary" style="background-color: rgb(0, 80, 0)">Sign In</button>
         </div>
     </form>
 
     <div class="auth-links">
-        <p>Don't have an account? <a href="{% url 'accounts:register' %}">Register here</a></p>
+        <p style="color: white">Don't have an account? <a href="{% url 'accounts:register' %}">Register here</a></p>
     </div>
 </div>
 {% endblock %}

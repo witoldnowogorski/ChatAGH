@@ -1,7 +1,7 @@
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView, LogoutView
 from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
+from django.urls import reverse
 from .forms import RegisterForm
 
 class SignInView(LoginView):
@@ -10,7 +10,8 @@ class SignInView(LoginView):
 
 class SignOutView(LogoutView):
     """Logs out and redirects to login page."""
-    next_page = reverse_lazy("accounts:login")
+    def get_next_page(self):
+        return reverse("accounts:login")
 
 def register(request):
     """
