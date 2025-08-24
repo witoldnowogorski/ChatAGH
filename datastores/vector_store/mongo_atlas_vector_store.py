@@ -1,26 +1,16 @@
-import os
 from typing import List
 from langchain_core.documents import Document
 from pymongo import MongoClient, TEXT
-from sentence_transformers import SentenceTransformer
 import torch
-from collections import defaultdict
 
 from chat_graph.utils import log_execution_time
+from chat_graph.utils import embedding_model
 
 
 class MongoDBVectorStore:
-    def __init__(self, db_name: str, collection_name: str):
-        uri = os.environ["MONGODB_URI"]
-        self.client = MongoClient(uri)
-        self.db = self.client[db_name]
-        self.collection = self.db[collection_name]
-
-        if torch.cuda.is_available():
-            self.dense_model = SentenceTransformer("intfloat/multilingual-e5-large", device="cuda")
-        else:
-            self.dense_model = SentenceTransformer("intfloat/multilingual-e5-large")
-
+    def __init__(self, mongo_client: MongoClient, db_name: str, collection_name: str):
+        self.collection = mongo_client[db_name][collection_name]
+        self.dense_model = embedding_model
         self._ensure_indexes()
 
     def _ensure_indexes(self):

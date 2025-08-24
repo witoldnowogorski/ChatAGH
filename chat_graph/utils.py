@@ -1,12 +1,23 @@
+import os
 import functools
-import json
-import random
 import time
 import logging
+
+import torch
+from pymongo import MongoClient
+from sentence_transformers import SentenceTransformer
 
 
 logger = logging.getLogger("chat_graph_logger")
 logger.setLevel(logging.INFO)
+
+mongo_client = MongoClient(os.environ.get("MONGODB_URI"), tlsAllowInvalidCertificates=True)
+
+embedding_model = (
+    SentenceTransformer("intfloat/multilingual-e5-large", device="cuda")
+    if torch.cuda.is_available()
+    else SentenceTransformer("intfloat/multilingual-e5-large")
+)
 
 if not logger.handlers:
     handler = logging.StreamHandler()

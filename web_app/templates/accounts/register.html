@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+
+{% block title %}Register - Chat App{% endblock %}
+
+{% block extra_css %}
+<style>
+    .auth-container {
+        max-width: 400px;
+        margin: 2rem auto;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding-top: 50px;
+    }
+
+    .auth-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .auth-header h2 {
+        color: white;
+        font-weight: 500;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: white;
+    }
+
+    .form-group input {
+        color: white;
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid rgb(0, 80, 0);
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: border-color 0.2s;
+        background-color: rgba(0, 0, 0, 0.7)
+    }
+
+    .form-group input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+        background-color: rgba(0, 0, 0, 0.8)
+    }
+
+    .form-actions {
+        margin-top: 2rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+        background-color: #007bff;
+        border: none;
+        padding: 0.75rem;
+        border-radius: 4px;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .auth-links {
+        text-align: center;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #eee;
+    }
+
+    .auth-links a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .auth-links a:hover {
+        text-decoration: underline;
+    }
+
+    .errorlist {
+        color: #dc3545;
+        list-style: none;
+        margin: 0.5rem 0;
+        padding: 0;
+    }
+
+    .errorlist li {
+        margin: 0.25rem 0;
+        font-size: 0.9rem;
+    }
+
+    .help-text {
+        font-size: 0.85rem;
+        color: #6c757d;
+        margin-top: 0.25rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-header">
+        <h2>Create Account</h2>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+        <div class="alert alert-error">
+            {{ form.non_field_errors }}
+        </div>
+        {% endif %}
+
+        <div class="form-group">
+            <label for="{{ form.username.id_for_label }}">Username</label>
+            {{ form.username }}
+            {% if form.username.errors %}
+                <ul class="errorlist">
+                    {% for error in form.username.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Email</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+                <ul class="errorlist">
+                    {% for error in form.email.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.password.id_for_label }}">Password</label>
+            {{ form.password }}
+            {% if form.password.errors %}
+                <ul class="errorlist">
+                    {% for error in form.password.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.password_confirm.id_for_label }}">Confirm Password</label>
+            {{ form.password_confirm }}
+            {% if form.password_confirm.errors %}
+                <ul class="errorlist">
+                    {% for error in form.password_confirm.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary", style="background-color: rgb(0, 80, 0)">Create Account</button>
+        </div>
+    </form>
+
+    <div class="auth-links">
+        <p style="color: white">Already have an account? <a href="{% url 'accounts:login' %}">Sign in here</a></p>
+    </div>
+</div>
+{% endblock %}

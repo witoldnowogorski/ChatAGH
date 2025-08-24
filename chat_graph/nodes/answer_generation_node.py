@@ -22,10 +22,10 @@ class AnswerGenerationNode(BaseNode):
             "chat_history": chat_history,
             "retrieved_context": retrieved_context
         }
+        answer = ""
         for response_chunk in self.agent.stream_response(**args):
             writer(response_chunk)
-
-        answer = ""
+            answer += response_chunk.content
 
         state["chat_history"].append(AIMessage(answer))
 

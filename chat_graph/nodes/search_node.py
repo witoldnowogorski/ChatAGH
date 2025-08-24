@@ -9,15 +9,20 @@ from datastores.vector_store.mongo_atlas_vector_store import MongoDBVectorStore
 class SearchNode(BaseNode):
     def __init__(
         self,
+        mongo_client: MongoClient,
         initial_retrieved_chunks: int = 8,
         window_size: int = 3
     ):
-        uri = os.environ.get("MONGODB_URI")
         self.initial_retrieved_chunks = initial_retrieved_chunks
         self.window_size = window_size
 
-        self.vector_store = MongoDBVectorStore("chat_agh", "chunks")
-        self.mongo_client = MongoClient(uri, tlsAllowInvalidCertificates=True)
+        self.mongo_client = mongo_client
+
+        import time
+        start_time = time.time()
+        self.vector_store = MongoDBVectorStore(self.mongo_client, "chat_agh", "chunks")
+        end_time = time.time()
+        print(end_time - start_time)
 
     def __call__(self, state: ChatState) -> ChatState:
         logger.info("Performing similarity search on vector store ...")
@@ -25,7 +30,7 @@ class SearchNode(BaseNode):
         query = state["search_query"]
         retrieved_chunks = self.vector_store.search(query, k=self.initial_retrieved_chunks)
 
-        aggregated_docs = self.aggregate_by_document(retrieved_chunks)
+        aggregated_docs = self.aggregate_by_url(retrieved_chunks)
 
         logger.info(
             "Retrieved {} documents, source urls: {}".format(len(retrieved_chunks), aggregated_docs.keys())
@@ -38,7 +43,7 @@ class SearchNode(BaseNode):
         return state
 
     @staticmethod
-    def aggregate_by_document(retrieved_chunks):
+    def aggregate_by_url(retrieved_chunks):
         """Group retrieved chunks by source url's"""
         urls = {}
         for doc in retrieved_chunks:

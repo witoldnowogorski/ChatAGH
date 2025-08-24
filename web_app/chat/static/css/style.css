@@ -1,0 +1,264 @@
+/* Additional styles for Chat App */
+
+/* Scrollbar styling for webkit browsers */
+.messages-container::-webkit-scrollbar,
+.conversations-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messages-container::-webkit-scrollbar-track,
+.conversations-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.messages-container::-webkit-scrollbar-thumb,
+.conversations-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover,
+.conversations-list::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+.typing-bubble {
+    position: relative;
+    min-width: 6em;
+    padding: 1.75rem 2rem;
+    text-align: left;
+}
+
+.typing-bubble::after {
+    content: "●";
+    animation: dots 1.4s ease-in-out infinite;
+    font-size: 1rem;
+}
+
+/* Focus states for better accessibility */
+.conversation-item:focus {
+    outline: 2px solid #007bff;
+    outline-offset: -2px;
+}
+
+.new-chat-btn:focus,
+.send-btn:focus,
+.message-input:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Smooth transitions */
+.message {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Enhanced Markdown styling */
+.markdown-content {
+    word-break: break-word;
+}
+
+/* Headings in markdown */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.markdown-content h1:first-child,
+.markdown-content h2:first-child,
+.markdown-content h3:first-child,
+.markdown-content h4:first-child,
+.markdown-content h5:first-child,
+.markdown-content h6:first-child {
+    margin-top: 0;
+}
+
+/* Lists in markdown */
+.markdown-content ul,
+.markdown-content ol {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.markdown-content li {
+    margin-bottom: 0.25rem;
+}
+
+.markdown-content li > p {
+    margin-bottom: 0.25rem;
+}
+
+/* Blockquotes in markdown */
+.markdown-content blockquote {
+    border-left: 4px solid #ddd;
+    margin: 1rem 0;
+    padding: 0.5rem 0 0.5rem 1rem;
+    background: rgba(0, 0, 0, 0.02);
+    font-style: italic;
+    color: #666;
+}
+
+/* Tables in markdown */
+.markdown-content table {
+    border-collapse: collapse;
+    margin: 1rem 0;
+    width: 100%;
+    font-size: 0.9em;
+}
+
+.markdown-content th,
+.markdown-content td {
+    border: 1px solid #ddd;
+    padding: 0.4rem 0.6rem;
+    text-align: left;
+}
+
+.markdown-content th {
+    background: rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+}
+
+/* Code styling in markdown */
+.markdown-content code {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0.15em 0.3em;
+    border-radius: 3px;
+    font-family: "Monaco", "Menlo", "Ubuntu Mono", "Consolas", monospace;
+    font-size: 0.85em;
+}
+
+.markdown-content pre {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+    position: relative;
+}
+
+.markdown-content pre code {
+    background: none;
+    padding: 0;
+    font-size: 0.85em;
+    border-radius: 0;
+}
+
+/* Links in markdown */
+.markdown-content a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.markdown-content a:hover {
+    text-decoration: underline;
+}
+
+/* Horizontal rules in markdown */
+.markdown-content hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.5rem 0;
+}
+
+/* Strong and emphasis in markdown */
+.markdown-content strong {
+    font-weight: 600;
+}
+
+.markdown-content em {
+    font-style: italic;
+}
+
+/* Legacy code blocks for backward compatibility */
+.message-bubble code {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+    font-size: 0.85em;
+}
+
+.message.user .message-bubble code {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.message-bubble pre {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 0.5rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 0.5rem 0;
+}
+
+.message.user .message-bubble pre {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Syntax highlighting for common languages */
+.markdown-content pre[class*="language-"] {
+    position: relative;
+}
+
+.markdown-content pre[class*="language-"]::before {
+    content: attr(data-language);
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.7rem;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Copy button styling for code blocks */
+.code-block-container {
+    position: relative;
+}
+
+.copy-code-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 3px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.code-block-container:hover .copy-code-btn {
+    opacity: 1;
+}
+
+.copy-code-btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Print styles */
+@media print {
+    .sidebar,
+    .message-input-container,
+    .navbar {
+        display: none;
+    }
+
+    .chat-main {
+        width: 100%;
+    }
+
+    .message-bubble {
+        border: 1px solid #ddd;
+        margin: 0.5rem 0;
+    }
+}

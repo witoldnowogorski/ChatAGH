@@ -3,21 +3,19 @@ from pymongo import MongoClient
 
 from typing import List, Dict
 from sklearn.metrics.pairwise import cosine_similarity
-from sentence_transformers import SentenceTransformer
 from datastores.vector_store.utils import bm25_similarity
 import numpy as np
 
 from chat_graph.states import ChatState
-from chat_graph.utils import logger
+from chat_graph.utils import logger, embedding_model
 
 
 DOC_TEMPLATE = " -> Document (url: {}): \n{}\n\n"
 
 class GraphAugmentationNode:
-    def __init__(self, num_related_chunks_for_doc: int = 10):
-        uri = os.environ.get("MONGODB_URI")
-        self.client = MongoClient(uri, tlsAllowInvalidCertificates=True)
-        self.embedding_model = SentenceTransformer("intfloat/multilingual-e5-large")
+    def __init__(self, mongo_client: MongoClient, num_related_chunks_for_doc: int = 10):
+        self.client = mongo_client
+        self.embedding_model = embedding_model
         self.num_related_chunks_for_doc = num_related_chunks_for_doc
 
     def __call__(self, state: ChatState) -> ChatState:
@@ -27,13 +25,13 @@ class GraphAugmentationNode:
 
         context = []
         for url, summary in analyzed_context.items():
-            context.append(self.process_single_url(url, summary))
+            context.append(self.process_single_url(url, summary, state))
 
         state["processed_retrieved_context"] = "\n\n\n".join(context)
 
         return state
 
-    def process_single_url(self, url, summary) -> str:
+    def process_single_url(self, url, summary, state) -> str:
         related_urls = self.find_related_urls(url)
 
         logger.info("Found {} related URLs for {}".format(len(related_urls), url))
@@ -53,6 +51,12 @@ class GraphAugmentationNode:
                 bm25_weight=0,
                 top_n=self.num_related_chunks_for_doc,
             )
+            for chunk in top_related_chunks:
+                url = chunk["chunk"]["metadata"]["url"]
+                if url in state["retrieved_chunks"].keys():
+                    state["retrieved_chunks"][url].append(chunk["chunk"])
+                else:
+                    state["retrieved_chunks"][url] = [chunk["chunk"]]
 
             source_document = DOC_TEMPLATE.format(url, summary)
 
